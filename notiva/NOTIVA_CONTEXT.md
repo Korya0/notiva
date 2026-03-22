@@ -27,7 +27,7 @@
 ## ✅ 4. Roadmap & Status
 > **See Detailed Roadmap here:** [DETAILED_ROADMAP.md](file:///d:/flutter/flutter_Projects/notiva/notiva/DETAILED_ROADMAP.md)
 
-- **Phase 1: Foundation & Auth** (Current Focus)
+- **Phase 1: Foundation & Auth** (Current Focus: DI, GoRouter, L10n)
 - **Phase 2: Core Note Management**
 - **Phase 3: AI & OCR Intelligence**
 - **Phase 4: System Polish & Productivity**

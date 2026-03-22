@@ -137,7 +137,7 @@
 
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
 
-- [ ] **Phase 1: Foundation & Auth**
+- [ ] **Phase 1: Foundation & Auth** (DI, Routing, L10n, Theme, Splash, Onboarding)
 - [ ] **Phase 2: Core Note Management**
 - [ ] **Phase 3: AI & OCR Intelligence**
 - [ ] **Phase 4: System Polish & Productivity**
