@@ -20,6 +20,10 @@ This document breaks down each phase into the smallest possible technical steps 
     - [ ] Install `go_router`.
     - [ ] Define `Routes` and `AppRouter` config.
     - [ ] Implement `AuthGuard` redirect logic.
+- [ ] **Localization (L10n)**:
+    - [ ] Setup `flutter_localizations` & `intl`.
+    - [ ] Create `app_en.arb` and `app_ar.arb`.
+    - [ ] Implement `L10n` extension for easy context access.
 - [ ] **Theme & Design**:
     - [ ] Create `AppColors` (Deep Purple #6C63FF base).
     - [ ] Create `AppTextStyles` using `GoogleFonts` (Inter/Cairo).
@@ -96,7 +100,7 @@ This document breaks down each phase into the smallest possible technical steps 
 
 ### 3. Global Settings
 - [ ] Build Profile screen with writing statistics.
-- [ ] Implement Language & Theme switching.
+- [ ] Implement Theme switching.
 
 ---
 
@@ -109,6 +113,6 @@ This document breaks down each phase into the smallest possible technical steps 
 ### 2. Store Readiness
 - [ ] Generate App Icons for all platforms.
 - [ ] Create high-quality store screenshots.
-- [ ] Finalize Localization (Ar/En).
+- [ ] Finalize store presence (Metadata/Descriptions).
 - [ ] Generate release builds and publish via Shorebird.
 
