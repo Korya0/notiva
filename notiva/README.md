@@ -36,8 +36,11 @@
 <a href="#">
   <img src="https://img.shields.io/badge/📱_Google_Play-00C853?style=for-the-badge" alt="Google Play"/>
 </a>
-<a href="https://www.linkedin.com/in/mahmod0/">
-  <img src="https://img.shields.io/badge/💬_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+<a href="#">
+  <img src="https://img.shields.io/badge/🍎_App_Store-000000?style=for-the-badge&logo=apple&logoColor=white" alt="App Store"/>
+</a>
+<a href="#-roadmap">
+  <img src="https://img.shields.io/badge/📊_Progress-FFD700?style=for-the-badge" alt="Progress"/>
 </a>
 </p>
 
