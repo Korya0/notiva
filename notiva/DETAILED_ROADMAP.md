@@ -10,16 +10,21 @@ This document breaks down each phase into the smallest possible technical steps 
 - [x] Initialize Shorebird for code push: `shorebird init`.
 - [x] Configure `Analysis Options` for strict linting.
 - [ ] Setup Git workflow: `main`, `develop`, and `feature/*` branches.
+- [ ] **App Branding & Identity**:
+    - [ ] Update App Name (`Notiva`) for all platforms.
+    - [ ] Setup `flutter_launcher_icons` for multi-platform App Logos.
+    - [ ] Setup `flutter_native_splash` for a professional Native Splash screen.
+
 
 ### 2. Core Architecture Setup
 - [x] **Dependency Injection**: 
     - [x] Install `get_it`.
     - [x] Create `service_locator.dart`.
     - [x] Implement `initDependencies()` and feature-based registration.
-- [ ] **Routing & Navigation**:
-    - [ ] Install `go_router`.
-    - [ ] Define `AppRoutes` and `AppRouter` config (**Pattern E1**).
-    - [ ] Implement `AuthGuard` redirect logic (**Pattern E2**).
+- [x] **Routing & Navigation**:
+    - [x] Install `go_router`.
+    - [x] Define `AppRoutes` and `AppRouter` config (**Pattern E1**).
+    - [x] Implement `AuthGuard` redirect logic (**Pattern E2**).
 - [ ] **Localization (L10n)**:
     - [ ] Setup `flutter_localizations` & `intl` (**Pattern A6**).
     - [ ] Create `app_en.arb` (Inter) and `app_ar.arb` (Cairo).
