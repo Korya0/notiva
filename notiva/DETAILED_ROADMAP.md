@@ -12,10 +12,10 @@ This document breaks down each phase into the smallest possible technical steps 
 - [ ] Setup Git workflow: `main`, `develop`, and `feature/*` branches.
 
 ### 2. Core Architecture Setup
-- [ ] **Dependency Injection**: 
-    - [ ] Install `get_it`.
-    - [ ] Create `service_locator.dart`.
-    - [ ] Implement `initDependencies()` and feature-based registration.
+- [x] **Dependency Injection**: 
+    - [x] Install `get_it`.
+    - [x] Create `service_locator.dart`.
+    - [x] Implement `initDependencies()` and feature-based registration.
 - [ ] **Routing & Navigation**:
     - [ ] Install `go_router`.
     - [ ] Define `AppRoutes` and `AppRouter` config (**Pattern E1**).
@@ -38,6 +38,7 @@ This document breaks down each phase into the smallest possible technical steps 
 ### 3. UI Foundation
 - [ ] **Splash Screen**:
     - [ ] Build `SplashScreen` with Shimmer Animation (**Pattern K6**).
+    - [ ] Implement `locator.allReady()` check to wait for async dependencies.
     - [ ] Implement Auth check & navigation logic.
 - [ ] **Onboarding Flow**:
     - [ ] Build 3-step Wizard (Notes, AI, OCR) (**Pattern B8**).
@@ -47,6 +48,9 @@ This document breaks down each phase into the smallest possible technical steps 
 - [ ] **Firebase Setup**:
     - [ ] Create Firebase project and link via `flutterfire configure`.
     - [ ] Enable Auth (Email/Google), Firestore, and Storage.
+    - [ ] Integrate **Firebase Crashlytics** for real-time error tracking.
+    - [ ] Integrate **Firebase Analytics** for user activity & "Most visited screens".
+    - [ ] Integrate **Firebase Performance Monitoring**.
 - [ ] **Auth Feature**:
     - [ ] Build `AuthCubit` with `Sealed Classes` for states.
     - [ ] Build UI: Multi-step Onboarding (B8 Wizard logic).
