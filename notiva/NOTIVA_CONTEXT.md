@@ -25,6 +25,8 @@
 4. **Rich Text:** `flutter_quill` is the primary editor tool.
 
 ## ✅ 4. Roadmap & Status
+> **See Detailed Roadmap here:** [DETAILED_ROADMAP.md](file:///d:/flutter/flutter_Projects/notiva/notiva/DETAILED_ROADMAP.md)
+
 - Phase 1: Foundation
     - [x] Project Setup & Renaming
     - [x] Git Workflow & Architecture Rules
