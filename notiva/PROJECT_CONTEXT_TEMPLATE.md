@@ -25,9 +25,22 @@
 4. **Rich Text:** `flutter_quill` is the primary editor tool.
 
 ## ✅ 4. Roadmap & Status
-- [x] Core Documentation (Spec, Rules, README)
-- [ ] Core Setup (DI, Theme, Router)
-- [ ] Onboarding & Auth Flow
-- [ ] Note Editor & List (Home)
-- [ ] OCR & AI Integration
-- [ ] PDF Export & Sharing
+- Phase 1: Foundation
+    - [x] Project Setup & Renaming
+    - [x] Git Workflow & Architecture Rules
+    - [x] Initial Documentation (Spec, README, Context)
+- Phase 2: Core Infrastructure
+    - [ ] DI, Router, Theme, Networking (Retrofit)
+    - [ ] Local Storage (Hive) & Offline-First Strategy
+    - [ ] Onboarding & Auth Flow (Firebase)
+- Phase 3: Note Management
+    - [ ] Note Editor (Quill) & Auto-save
+    - [ ] Folders & Tags Management
+    - [ ] Home Screen & Search (Filtered)
+- Phase 4: AI & OCR Features
+    - [ ] ML Kit OCR (Isolate processing)
+    - [ ] Gemini AI (Summarization, Suggestions)
+- Phase 5: Polish & Deployment
+    - [ ] PDF Export, Trash/Archive, Notifications
+    - [ ] Localization & Premium Gating
+    - [ ] Store Listing & CI/CD (Shorebird)
