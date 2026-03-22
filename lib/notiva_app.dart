@@ -5,6 +5,8 @@ import 'package:notiva/core/global_state/locale/app_locale_state.dart';
 import 'package:notiva/core/global_state/theme/app_theme_cubit.dart';
 import 'package:notiva/core/global_state/theme/app_theme_state.dart';
 import 'package:notiva/core/router/app_router.dart';
+import 'package:notiva/core/theme/app_theme.dart';
+import 'package:notiva/core/widgets/keyboard_dismisser.dart';
 import 'package:notiva/l10n/app_localizations.dart';
 
 class NotivaApp extends StatelessWidget {
@@ -28,15 +30,18 @@ class NotivaApp extends StatelessWidget {
                 ? localeState.locale
                 : const Locale('en');
 
-            return MaterialApp.router(
-              title: 'Notiva',
-              debugShowCheckedModeBanner: false,
-              routerConfig: appRouter,
-
-              themeMode: themeMode,
-              locale: locale,
-              localizationsDelegates: AppLocalizations.localizationsDelegates,
-              supportedLocales: AppLocalizations.supportedLocales,
+            return KeyboardDismisser(
+              child: MaterialApp.router(
+                title: 'Notiva',
+                debugShowCheckedModeBanner: false,
+                routerConfig: appRouter,
+                theme: AppTheme.lightTheme(locale),
+                darkTheme: AppTheme.darkTheme(locale),
+                themeMode: themeMode,
+                locale: locale,
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                supportedLocales: AppLocalizations.supportedLocales,
+              ),
             );
           },
         );

@@ -9,8 +9,9 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(
       path: AppRoutes.root,
-      builder: (context, state) =>
-          const Scaffold(body: Center(child: Text('Splash'))),
+      builder: (context, state) => const Scaffold(
+        body: Center(child: Text('Splash')),
+      ),
     ),
     GoRoute(
       path: AppRoutes.login,

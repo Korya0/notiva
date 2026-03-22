@@ -32,13 +32,13 @@ This document breaks down each phase into the smallest possible technical steps 
 - [x] **Global State (B7)**:
     - [x] Create `AppThemeCubit` for dynamic switching.
     - [x] Create `AppLocaleCubit` for language switching.
-- [ ] **Theme & Design**:
-    - [ ] Create `AppColors` (Deep Navy Blue #001F3F & Vibrant Teal #008080).
-    - [ ] Create `AppTextStyles` using `GoogleFonts` or registered assets.
-    - [ ] Implement `Glassmorphism` utility.
-    - [ ] Setup `AdaptiveTheme` for Light/Dark modes (**Pattern G7**).
-- [ ] **Utilities**:
-    - [ ] Implement `KeyboardDismisser` (**Pattern G13**).
+- [x] **Theme & Design**:
+    - [x] Create `AppColors` (Deep Navy Blue #001F3F & Vibrant Teal #008080).
+    - [x] Create `AppTextStyles` using `GoogleFonts` or registered assets.
+    - [x] Implement `Glassmorphism` utility.
+    - [x] Setup `AdaptiveTheme` for Light/Dark modes (**Pattern G7**).
+- [x] **Utilities**:
+    - [x] Implement `KeyboardDismisser` (**Pattern G13**).
 
 ### 3. UI Foundation
 - [ ] **Splash Screen**:
