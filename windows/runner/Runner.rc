@@ -89,11 +89,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example" "\0"
+            VALUE "CompanyName", "com.korya" "\0"
             VALUE "FileDescription", "notiva" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "notiva" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 com.korya. All rights reserved." "\0"
             VALUE "OriginalFilename", "notiva.exe" "\0"
             VALUE "ProductName", "notiva" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

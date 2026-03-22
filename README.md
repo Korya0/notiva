@@ -110,7 +110,7 @@
 >
 > The links for the **Website**, **Google Play**, and **App Store** are currently placeholders. They will be activated once the project reaches its first stable release (MVP).
 >
-> **Current Focus:** Phase 1 (Foundation) & Phase 2 (Core Infrastructure).
+> **Current Focus:** Phase 1 (Foundation & Auth).
 
 ---
 
