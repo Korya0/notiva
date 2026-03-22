@@ -1,0 +1,13 @@
+{
+  "appTitle": "Notiva",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "A simple greeting"
+  },
+  "success": "Operation successful",
+  "error": "An error occurred",
+  "loading": "Loading..."
+}
