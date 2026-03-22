@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:notiva/core/di/service_locator.dart';
+import 'package:notiva/core/router/app_router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +21,10 @@ class MyApp extends StatelessWidget {
   Widget build(
     BuildContext context,
   ) {
-    return const MaterialApp();
+    return MaterialApp.router(
+      title: 'Notiva',
+      debugShowCheckedModeBanner: false,
+      routerConfig: appRouter,
+    );
   }
 }

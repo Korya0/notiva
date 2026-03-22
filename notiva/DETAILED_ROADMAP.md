@@ -10,16 +10,21 @@ This document breaks down each phase into the smallest possible technical steps 
 - [x] Initialize Shorebird for code push: `shorebird init`.
 - [x] Configure `Analysis Options` for strict linting.
 - [ ] Setup Git workflow: `main`, `develop`, and `feature/*` branches.
+- [x] **App Branding & Identity**:
+    - [x] Update App Name (`Notiva`) for all platforms.
+    - [x] Setup `flutter_launcher_icons` for multi-platform App Logos.
+    - [x] Setup `flutter_native_splash` for a professional Native Splash screen.
+
 
 ### 2. Core Architecture Setup
 - [x] **Dependency Injection**: 
     - [x] Install `get_it`.
     - [x] Create `service_locator.dart`.
     - [x] Implement `initDependencies()` and feature-based registration.
-- [ ] **Routing & Navigation**:
-    - [ ] Install `go_router`.
-    - [ ] Define `AppRoutes` and `AppRouter` config (**Pattern E1**).
-    - [ ] Implement `AuthGuard` redirect logic (**Pattern E2**).
+- [x] **Routing & Navigation**:
+    - [x] Install `go_router`.
+    - [x] Define `AppRoutes` and `AppRouter` config (**Pattern E1**).
+    - [x] Implement `AuthGuard` redirect logic (**Pattern E2**).
 - [ ] **Localization (L10n)**:
     - [ ] Setup `flutter_localizations` & `intl` (**Pattern A6**).
     - [ ] Create `app_en.arb` (Inter) and `app_ar.arb` (Cairo).
@@ -28,7 +33,7 @@ This document breaks down each phase into the smallest possible technical steps 
     - [ ] Create `AppThemeCubit` for dynamic switching.
     - [ ] Create `AppLocaleCubit` for language switching.
 - [ ] **Theme & Design**:
-    - [ ] Create `AppColors` (Deep Purple #6C63FF).
+    - [ ] Create `AppColors` (Deep Navy Blue #001F3F & Vibrant Teal #008080).
     - [ ] Create `AppTextStyles` using `GoogleFonts` (Inter/Cairo).
     - [ ] Implement `Glassmorphism` utility.
     - [ ] Setup `AdaptiveTheme` for Light/Dark modes (**Pattern G7**).
@@ -127,7 +132,7 @@ This document breaks down each phase into the smallest possible technical steps 
 - [ ] Setup `Firebase Remote Config` for dynamic feature flags.
 
 ### 2. Store Readiness
-- [ ] Generate App Icons for all platforms.
+- [x] Generate App Icons for all platforms.
 - [ ] Create high-quality store screenshots.
 - [ ] Finalize store presence (Metadata/Descriptions).
 - [ ] Generate release builds and publish via Shorebird.

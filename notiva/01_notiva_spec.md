@@ -17,7 +17,8 @@
 | **مدة التنفيذ** | 5 أسابيع |
 | **نموذج الربح** | Freemium + Ads |
 | **اللغات** | عربي + إنجليزي |
-| **Primary Color** | Deep Purple (#6C63FF) |
+| **Primary Color** | Deep Navy Blue (#001F3F) |
+| **Secondary Color** | Vibrant Teal (#008080) |
 | **Font** | Inter (En) / Cairo (Ar) |
 | **Style** | Minimalist + Glassmorphism |
 
