@@ -25,16 +25,16 @@ This document breaks down each phase into the smallest possible technical steps 
     - [x] Install `go_router`.
     - [x] Define `AppRoutes` and `AppRouter` config (**Pattern E1**).
     - [x] Implement `AuthGuard` redirect logic (**Pattern E2**).
-- [ ] **Localization (L10n)**:
-    - [ ] Setup `flutter_localizations` & `intl` (**Pattern A6**).
-    - [ ] Create `app_en.arb` (Inter) and `app_ar.arb` (Cairo).
-    - [ ] Implement `L10n` extension for context access.
+- [x] **Localization (L10n)**:
+    - [x] Setup `flutter_localizations` & `intl` (**Pattern A6**).
+    - [x] Organize and register `AppFonts` (`Outfit` & `IBM Plex Sans Arabic`).
+    - [x] Implement `L10n` extension for context access.
 - [ ] **Global State (B7)**:
     - [ ] Create `AppThemeCubit` for dynamic switching.
     - [ ] Create `AppLocaleCubit` for language switching.
 - [ ] **Theme & Design**:
     - [ ] Create `AppColors` (Deep Navy Blue #001F3F & Vibrant Teal #008080).
-    - [ ] Create `AppTextStyles` using `GoogleFonts` (Inter/Cairo).
+    - [ ] Create `AppTextStyles` using `GoogleFonts` or registered assets.
     - [ ] Implement `Glassmorphism` utility.
     - [ ] Setup `AdaptiveTheme` for Light/Dark modes (**Pattern G7**).
 - [ ] **Utilities**:
