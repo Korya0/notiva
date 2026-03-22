@@ -16,27 +16,39 @@ This document breaks down each phase into the smallest possible technical steps 
     - [ ] Install `get_it`.
     - [ ] Create `service_locator.dart`.
     - [ ] Implement `initDependencies()` and feature-based registration.
-- [ ] **Routing**:
+- [ ] **Routing & Navigation**:
     - [ ] Install `go_router`.
-    - [ ] Define `Routes` and `AppRouter` config.
-    - [ ] Implement `AuthGuard` redirect logic.
+    - [ ] Define `AppRoutes` and `AppRouter` config (**Pattern E1**).
+    - [ ] Implement `AuthGuard` redirect logic (**Pattern E2**).
 - [ ] **Localization (L10n)**:
-    - [ ] Setup `flutter_localizations` & `intl`.
-    - [ ] Create `app_en.arb` and `app_ar.arb`.
-    - [ ] Implement `L10n` extension for easy context access.
+    - [ ] Setup `flutter_localizations` & `intl` (**Pattern A6**).
+    - [ ] Create `app_en.arb` (Inter) and `app_ar.arb` (Cairo).
+    - [ ] Implement `L10n` extension for context access.
+- [ ] **Global State (B7)**:
+    - [ ] Create `AppThemeCubit` for dynamic switching.
+    - [ ] Create `AppLocaleCubit` for language switching.
 - [ ] **Theme & Design**:
-    - [ ] Create `AppColors` (Deep Purple #6C63FF base).
+    - [ ] Create `AppColors` (Deep Purple #6C63FF).
     - [ ] Create `AppTextStyles` using `GoogleFonts` (Inter/Cairo).
-    - [ ] Implement `Glassmorphism` UI utility/decorator.
-    - [ ] Setup `AdaptiveTheme` for Light/Dark modes.
+    - [ ] Implement `Glassmorphism` utility.
+    - [ ] Setup `AdaptiveTheme` for Light/Dark modes (**Pattern G7**).
+- [ ] **Utilities**:
+    - [ ] Implement `KeyboardDismisser` (**Pattern G13**).
 
-### 3. Authentication Flow
+### 3. UI Foundation
+- [ ] **Splash Screen**:
+    - [ ] Build `SplashScreen` with Shimmer Animation (**Pattern K6**).
+    - [ ] Implement Auth check & navigation logic.
+- [ ] **Onboarding Flow**:
+    - [ ] Build 3-step Wizard (Notes, AI, OCR) (**Pattern B8**).
+    - [ ] Implement "Get Started" persistence logic.
+
+### 4. Authentication Flow
 - [ ] **Firebase Setup**:
     - [ ] Create Firebase project and link via `flutterfire configure`.
     - [ ] Enable Auth (Email/Google), Firestore, and Storage.
 - [ ] **Auth Feature**:
     - [ ] Build `AuthCubit` with `Sealed Classes` for states.
-    - [ ] Build UI: Splash Screen (K6 Preloader logic).
     - [ ] Build UI: Multi-step Onboarding (B8 Wizard logic).
     - [ ] Build UI: Login, Register, and Forgot Password screens.
 
