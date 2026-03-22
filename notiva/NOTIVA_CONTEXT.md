@@ -9,6 +9,7 @@
 - **Goal:** Smart Note-Taking with AI Summarization, OCR Scanning, and Offline-First synchronization.
 - **Infrastructure:** Firebase (Auth, Firestore, Storage) / Shorebird (Code Push).
 - **Localization:** Arabic (Priority) & English.
+- **Branding Colors:** Deep Navy Blue (#001F3F) & Vibrant Teal (#008080).
 
 ## 🧩 2. Project-Specific Stack
 - **State:** `flutter_bloc` (Cubit + Sealed Classes).

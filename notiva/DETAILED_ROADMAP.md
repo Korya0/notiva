@@ -10,10 +10,10 @@ This document breaks down each phase into the smallest possible technical steps 
 - [x] Initialize Shorebird for code push: `shorebird init`.
 - [x] Configure `Analysis Options` for strict linting.
 - [ ] Setup Git workflow: `main`, `develop`, and `feature/*` branches.
-- [ ] **App Branding & Identity**:
-    - [ ] Update App Name (`Notiva`) for all platforms.
-    - [ ] Setup `flutter_launcher_icons` for multi-platform App Logos.
-    - [ ] Setup `flutter_native_splash` for a professional Native Splash screen.
+- [x] **App Branding & Identity**:
+    - [x] Update App Name (`Notiva`) for all platforms.
+    - [x] Setup `flutter_launcher_icons` for multi-platform App Logos.
+    - [x] Setup `flutter_native_splash` for a professional Native Splash screen.
 
 
 ### 2. Core Architecture Setup
@@ -33,7 +33,7 @@ This document breaks down each phase into the smallest possible technical steps 
     - [ ] Create `AppThemeCubit` for dynamic switching.
     - [ ] Create `AppLocaleCubit` for language switching.
 - [ ] **Theme & Design**:
-    - [ ] Create `AppColors` (Deep Purple #6C63FF).
+    - [ ] Create `AppColors` (Deep Navy Blue #001F3F & Vibrant Teal #008080).
     - [ ] Create `AppTextStyles` using `GoogleFonts` (Inter/Cairo).
     - [ ] Implement `Glassmorphism` utility.
     - [ ] Setup `AdaptiveTheme` for Light/Dark modes (**Pattern G7**).
@@ -132,7 +132,7 @@ This document breaks down each phase into the smallest possible technical steps 
 - [ ] Setup `Firebase Remote Config` for dynamic feature flags.
 
 ### 2. Store Readiness
-- [ ] Generate App Icons for all platforms.
+- [x] Generate App Icons for all platforms.
 - [ ] Create high-quality store screenshots.
 - [ ] Finalize store presence (Metadata/Descriptions).
 - [ ] Generate release builds and publish via Shorebird.
