@@ -30,17 +30,14 @@
 
 <!-- Links Section -->
 <p>
-<a href="#">
+<a href="#-deployment-status">
   <img src="https://img.shields.io/badge/🌐_Website-D4AF37?style=for-the-badge" alt="Website"/>
 </a>
-<a href="#">
+<a href="#-deployment-status">
   <img src="https://img.shields.io/badge/📱_Google_Play-00C853?style=for-the-badge" alt="Google Play"/>
 </a>
-<a href="#">
+<a href="#-deployment-status">
   <img src="https://img.shields.io/badge/🍎_App_Store-000000?style=for-the-badge&logo=apple&logoColor=white" alt="App Store"/>
-</a>
-<a href="#-roadmap">
-  <img src="https://img.shields.io/badge/📊_Progress-FFD700?style=for-the-badge" alt="Progress"/>
 </a>
 </p>
 
@@ -101,6 +98,19 @@
 - **Database**: `Hive (Local) / Firestore (Remote) / Firebase Storage (Images)`
 - **Cloud Interface**: `Firebase`
 - **State Management**: `Bloc / Cubit`
+
+---
+
+## 🚧 Deployment Status
+
+<hr style="height:1px;border:none;color:#333;background-color:#333;" />
+
+> [!NOTE]
+> **Project Status:** Under Active Development 🛠️
+>
+> The links for the **Website**, **Google Play**, and **App Store** are currently placeholders. They will be activated once the project reaches its first stable release (MVP).
+>
+> **Current Focus:** Phase 1 (Foundation) & Phase 2 (Core Infrastructure).
 
 ---
 
