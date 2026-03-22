@@ -29,9 +29,9 @@ This document breaks down each phase into the smallest possible technical steps 
     - [x] Setup `flutter_localizations` & `intl` (**Pattern A6**).
     - [x] Organize and register `AppFonts` (`Outfit` & `IBM Plex Sans Arabic`).
     - [x] Implement `L10n` extension for context access.
-- [ ] **Global State (B7)**:
-    - [ ] Create `AppThemeCubit` for dynamic switching.
-    - [ ] Create `AppLocaleCubit` for language switching.
+- [x] **Global State (B7)**:
+    - [x] Create `AppThemeCubit` for dynamic switching.
+    - [x] Create `AppLocaleCubit` for language switching.
 - [ ] **Theme & Design**:
     - [ ] Create `AppColors` (Deep Navy Blue #001F3F & Vibrant Teal #008080).
     - [ ] Create `AppTextStyles` using `GoogleFonts` or registered assets.
