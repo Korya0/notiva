@@ -6,7 +6,7 @@ This document breaks down each phase into the smallest possible technical steps 
 
 ## 🏗️ Phase 1: Foundation & Auth
 ### 1. Project Initialization
-- [ ] Initialize Flutter project: `flutter create --org com.korya notiva`.
+- [X] Initialize Flutter project: `flutter create --org com.korya notiva`.
 - [ ] Initialize Shorebird for code push: `shorebird init`.
 - [ ] Configure `Analysis Options` for strict linting.
 - [ ] Setup Git workflow: `main`, `develop`, and `feature/*` branches.
