@@ -341,7 +341,7 @@ class GeminiService {
 ## 🗓️ جدول 5 أسابيع
 
 ### أسبوع 1: الأساس
-- [ ] Google Stitch: تصميم كل الشاشات
+- [] Google Stitch: تصميم كل الشاشات
 - [ ] flutter create + A3 Bootstrap + Shorebird init
 - [ ] G7 Theme + E1 Router + H1 DI + Firebase
 - [ ] S01 Splash + S02 Onboarding + S04 Login + S05 Register
