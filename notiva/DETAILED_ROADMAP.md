@@ -1,94 +1,114 @@
 # 🗺️ NOTIVA: DETAILED TECHNICAL ROADMAP
 
-This document breaks down each phase into granular steps to ensure full technical visibility and tracking.
+This document breaks down each phase into the smallest possible technical steps to ensure full visibility and tracking.
 
 ---
 
-## 🏗️ Phase 2: Core Infrastructure (Current Focus)
+## 🏗️ Phase 1: Foundation & Auth
+### 1. Project Initialization
+- [ ] Initialize Flutter project: `flutter create --org com.korya notiva`.
+- [ ] Initialize Shorebird for code push: `shorebird init`.
+- [ ] Configure `Analysis Options` for strict linting.
+- [ ] Setup Git workflow: `main`, `develop`, and `feature/*` branches.
 
-### 1. Dependency Injection (DI)
-- [ ] Install `get_it`.
-- [ ] Create `DependencyInjection` helper class.
-- [ ] Implement `registerFeature()` pattern for modularity.
+### 2. Core Architecture Setup
+- [ ] **Dependency Injection**: 
+    - [ ] Install `get_it`.
+    - [ ] Create `service_locator.dart`.
+    - [ ] Implement `initDependencies()` and feature-based registration.
+- [ ] **Routing**:
+    - [ ] Install `go_router`.
+    - [ ] Define `Routes` and `AppRouter` config.
+    - [ ] Implement `AuthGuard` redirect logic.
+- [ ] **Theme & Design**:
+    - [ ] Create `AppColors` (Deep Purple #6C63FF base).
+    - [ ] Create `AppTextStyles` using `GoogleFonts` (Inter/Cairo).
+    - [ ] Implement `Glassmorphism` UI utility/decorator.
+    - [ ] Setup `AdaptiveTheme` for Light/Dark modes.
 
-### 2. Basic Routing
-- [ ] Install `go_router`.
-- [ ] Configure `AppRouter` with initial routes (Splash, Login, Home).
-- [ ] Implement `AuthGuard` logic for protected routes.
-
-### 3. Design System & Theme
-- [ ] Configure `GoogleFonts` (Inter for En, Cairo for Ar).
-- [ ] Implement `AppTheme` (Light/Dark mode) with Glassmorphism tokens.
-- [ ] Create `AppColors` and `AppTextStyles` constants.
-
-### 4. Networking Layer
-- [ ] Install `dio` and `retrofit`.
-- [ ] Implement `DioFactory` with interceptors (Logging, Auth, Errors).
-- [ ] Create `ApiResult` and `ErrorHandler` for unified response handling.
-
-### 5. Local Storage & Offline Strategy
-- [ ] Install `hive` and `hive_flutter`.
-- [ ] Initialize Hive for persistence.
-- [ ] Design the `SyncStrategy` (Local writes → Queue → Background Push).
-
----
-
-## 📝 Phase 3: Note Management (The Core Feature)
-
-### 1. Feature Architecture (Notes)
-- [ ] Create Data layer (DTOs, Repositories).
-- [ ] Create Domain layer (Entities, Use Cases).
-- [ ] Setup `NotesCubit` with Sealed States.
-
-### 2. The Editor (Rich Text)
-- [ ] Install `flutter_quill`.
-- [ ] Implement `NoteEditor` with custom toolbar.
-- [ ] Implement `Debouncer` for auto-saving logic.
-
-### 3. Home Screen & Organization
-- [ ] Implement `SliverAppBar` with search and filters.
-- [ ] Create `NoteCard` component (Grid/List views).
-- [ ] Implement Folders and Tags management (CRUD).
-- [ ] Setup Search feature (Title/Content/Tags).
+### 3. Authentication Flow
+- [ ] **Firebase Setup**:
+    - [ ] Create Firebase project and link via `flutterfire configure`.
+    - [ ] Enable Auth (Email/Google), Firestore, and Storage.
+- [ ] **Auth Feature**:
+    - [ ] Build `AuthCubit` with `Sealed Classes` for states.
+    - [ ] Build UI: Splash Screen (K6 Preloader logic).
+    - [ ] Build UI: Multi-step Onboarding (B8 Wizard logic).
+    - [ ] Build UI: Login, Register, and Forgot Password screens.
 
 ---
 
-## 🤖 Phase 4: AI & OCR Features
+## 📝 Phase 2: Core Note Management
+### 1. Networking & Error Handling
+- [ ] Build `DioFactory` with logging and auth interceptors.
+- [ ] Implement `ApiResult` wrapper and `ErrorHandler` logic.
+- [ ] Generate `Retrofit` clients for Firestore REST/Wrappers.
 
-### 1. OCR (Optical Character Recognition)
-- [ ] Install `google_mlkit_text_recognition` and `image_picker`.
-- [ ] Implement Camera/Gallery flow with `ImageCropper`.
-- [ ] Move OCR processing to an `Isolate` for performance.
+### 2. Local Storage (Offline-First)
+- [ ] Initialize `Hive` and `HiveAdapter` for Notes/Folders/Tags.
+- [ ] Implement `CacheManager` to handle TTL and invalidation.
+- [ ] **Sync Engine**:
+    - [ ] Create `SyncQueue` for pending local changes.
+    - [ ] Implement background sync logic using `ConnectivityPlus`.
+
+### 3. The Note Editor
+- [ ] Integrate `flutter_quill` with custom minimal toolbar.
+- [ ] Build `AutoSaveService` using `Debouncer`.
+- [ ] Implement "Note Link" and "Checklist Mode" inside the editor.
+
+### 4. Home & Management
+- [ ] Build `SliverAppBar` with dynamic shrinking/expanding logic.
+- [ ] Implement `NoteCard` with Grid/List layout toggle.
+- [ ] Build Folders & Tags CRUD with `BottomSheet` dialogs.
+
+---
+
+## 🤖 Phase 3: AI & OCR Intelligence
+### 1. OCR (Scan to Note)
+- [ ] Integrate `google_mlkit_text_recognition`.
+- [ ] Build Camera/Gallery picker UI.
+- [ ] Implement `ImageCropper` integration.
+- [ ] Offload OCR processing to a dedicated `Isolate`.
 
 ### 2. Gemini AI Integration
-- [ ] Integrate Firebase Vertex AI / Gemini API.
-- [ ] Implement `summarizeNote` use case.
-- [ ] Implement `suggestTitle` based on note content.
-- [ ] Add "AI Enhancement" for OCR results.
+- [ ] Integrate `firebase_ai` for Gemini Pro access.
+- [ ] Implement "Smart Summary" (Extract 3-5 key points).
+- [ ] Implement "Smart Title" (Generate title from context).
+- [ ] Implement "OCR Refinement" (AI fixes scan typos).
 
-### 3. Media Management
-- [ ] Setup `Firebase Storage` repository.
-- [ ] Implement image upload progress and caching.
+### 3. Media Attachments
+- [ ] Build `StorageService` for Firebase Storage.
+- [ ] Implement image compression before upload.
+- [ ] Build thumbnail preview for notes.
 
 ---
 
-## 💎 Phase 5: Polish & Deployment
+## 💎 Phase 4: System Polish & Productivity
+### 1. Export & Sharing
+- [ ] Build PDF Export service using `pdf` and `printing` packages.
+- [ ] Implement Native Share service via `share_plus`.
+- [ ] Build "Print Note" functionality.
 
-### 1. System Features
-- [ ] Implement Multi-Tab `Trash` and `Archive`.
-- [ ] Add `Local Notifications` (Reminders).
-- [ ] Export to PDF service using `pdf` package.
+### 2. Organization Tools
+- [ ] Build Trash & Archive management screens.
+- [ ] Implement "Auto-Purge" logic for 30-day-old trash items.
+- [ ] Implement `Local Notifications` for reminders.
 
-### 2. Localization & Global Settings
-- [ ] Complete `l10n` (Arabic as priority, English).
-- [ ] Settings screen (Language, Theme, Reset).
+### 3. Global Settings
+- [ ] Build Profile screen with writing statistics.
+- [ ] Implement Language & Theme switching.
 
-### 3. Monetization & Security
-- [ ] Implement Premium Gating (Features vs. Free limit).
+---
+
+## 🚀 Phase 5: Monetization & Release
+### 1. Premium & Growth
+- [ ] Implement Premium Gating (Free vs. Pro limits).
 - [ ] Integrate Ads (Optional).
-- [ ] Configure Shorebird for Code Push.
+- [ ] Setup `Firebase Remote Config` for dynamic feature flags.
 
-### 4. Release
-- [ ] Prepare Store Assets (Icons, Screenshots).
-- [ ] Generate Release Builds (Android, iOS, Web).
-- [ ] Publish to Play Store & App Store.
+### 2. Store Readiness
+- [ ] Generate App Icons for all platforms.
+- [ ] Create high-quality store screenshots.
+- [ ] Finalize Localization (Ar/En).
+- [ ] Generate release builds and publish via Shorebird.
+

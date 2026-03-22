@@ -137,32 +137,14 @@
 
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
 
-- [x] **Phase 1: Foundation**
-    - [x] Project Setup & Renaming
-    - [x] Git Workflow & Architecture Rules
-    - [x] Initial Documentation (Spec, README, Context)
-- [ ] **Phase 2: Core Infrastructure**
-    - [ ] DI (GetIt), Router (GoRouter), Theme (Stitch)
-    - [ ] Networking (Dio + Retrofit) & Local DB (Hive)
-    - [ ] Onboarding & Authentication Flow (Firebase Auth)
-- [ ] **Phase 3: Note Management**
-    - [ ] Note Editor (Rich Text + Auto-save)
-    - [ ] Folders & Tags Management
-    - [ ] Home Screen (List/Grid + Slivers)
-    - [ ] Search & Filtering (Debounced)
-- [ ] **Phase 4: AI & OCR Features**
-    - [ ] Google ML Kit OCR (Isolate-based processing)
-    - [ ] Gemini AI Integration (Summarization, Title Suggestion)
-    - [ ] Image Uploads (Firebase Storage)
-- [ ] **Phase 5: Productivity & Polish**
-    - [ ] PDF Export Service
-    - [ ] Multi-Tab Trash & Archive
-    - [ ] Local Notifications & Reminders
-- [ ] **Phase 6: Deployment & Premium**
-    - [ ] Localization (Arabic/English)
-    - [ ] Premium Gating (Ads/Subscriptions)
-    - [ ] Shorebird Code Push integration
-    - [ ] App Store & Play Store Listing
+- [ ] **Phase 1: Foundation & Auth**
+- [ ] **Phase 2: Core Note Management**
+- [ ] **Phase 3: AI & OCR Intelligence**
+- [ ] **Phase 4: System Polish & Productivity**
+- [ ] **Phase 5: Monetization & Release**
+
+> [!TIP]
+> **View the full technical breakdown here:** [DETAILED_ROADMAP.md](file:///d:/flutter/flutter_Projects/notiva/notiva/DETAILED_ROADMAP.md)
 
 ---
 

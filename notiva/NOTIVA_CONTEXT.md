@@ -27,22 +27,10 @@
 ## ✅ 4. Roadmap & Status
 > **See Detailed Roadmap here:** [DETAILED_ROADMAP.md](file:///d:/flutter/flutter_Projects/notiva/notiva/DETAILED_ROADMAP.md)
 
-- Phase 1: Foundation
-    - [x] Project Setup & Renaming
-    - [x] Git Workflow & Architecture Rules
-    - [x] Initial Documentation (Spec, README, Context)
-- Phase 2: Core Infrastructure
-    - [ ] DI, Router, Theme, Networking (Retrofit)
-    - [ ] Local Storage (Hive) & Offline-First Strategy
-    - [ ] Onboarding & Auth Flow (Firebase)
-- Phase 3: Note Management
-    - [ ] Note Editor (Quill) & Auto-save
-    - [ ] Folders & Tags Management
-    - [ ] Home Screen & Search (Filtered)
-- Phase 4: AI & OCR Features
-    - [ ] ML Kit OCR (Isolate processing)
-    - [ ] Gemini AI (Summarization, Suggestions)
-- Phase 5: Polish & Deployment
-    - [ ] PDF Export, Trash/Archive, Notifications
-    - [ ] Localization & Premium Gating
-    - [ ] Store Listing & CI/CD (Shorebird)
+- **Phase 1: Foundation & Auth** (Current Focus)
+- **Phase 2: Core Note Management**
+- **Phase 3: AI & OCR Intelligence**
+- **Phase 4: System Polish & Productivity**
+- **Phase 5: Monetization & Release**
+
+> **See Ultra-Detailed Technical Roadmap here:** [DETAILED_ROADMAP.md](file:///d:/flutter/flutter_Projects/notiva/notiva/DETAILED_ROADMAP.md)

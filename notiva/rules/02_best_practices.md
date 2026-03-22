@@ -16,4 +16,7 @@
 - **Test:** Mandatory unit tests for Cubits/Use Cases/Repos. Widget tests for shared components.
 - **Tools:** Use MCP tools (`analyze_files`, `run_tests`) over raw shell commands.
 - **Wait for Confirmation:** For non-trivial tasks, confirm analysis and decomposition before coding.
-- **Anti-Patterns:** No unsolicited refactoring; match depth to task complexity; show only changed code.
+### 📦 Library Management
+- **Lean Dependencies:** Do NOT add any third-party library unless there is a genuine, unavoidable need.
+- **Framework first:** Always prioritize using built-in Flutter framework components and standard Dart features over external packages.
+- **Verification:** Every new dependency must be discussed and approved by the Tech Lead.
