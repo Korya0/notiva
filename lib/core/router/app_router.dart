@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notiva/core/router/app_routes.dart';
+import 'package:notiva/features/splash/presentation/screens/splash_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: AppRoutes.root,
@@ -9,9 +10,7 @@ final GoRouter appRouter = GoRouter(
   routes: [
     GoRoute(
       path: AppRoutes.root,
-      builder: (context, state) => const Scaffold(
-        body: Center(child: Text('Splash')),
-      ),
+      builder: (context, state) => const SplashScreen(),
     ),
     GoRoute(
       path: AppRoutes.login,

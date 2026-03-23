@@ -41,10 +41,10 @@ This document breaks down each phase into the smallest possible technical steps 
     - [x] Implement `KeyboardDismisser` (**Pattern G13**).
 
 ### 3. UI Foundation
-- [ ] **Splash Screen**:
-    - [ ] Build `SplashScreen` with Shimmer Animation (**Pattern K6**).
-    - [ ] Implement `locator.allReady()` check to wait for async dependencies.
-    - [ ] Implement Auth check & navigation logic.
+- [x] **Splash Screen**:
+    - [x] Build `SplashScreen` with Premium Scale Animation (**Pattern K6**).
+    - [x] Implement `locator.allReady()` check to wait for async dependencies.
+    - [x] Implement Auth check & navigation logic.
 - [ ] **Onboarding Flow**:
     - [ ] Build 3-step Wizard (Notes, AI, OCR) (**Pattern B8**).
     - [ ] Implement "Get Started" persistence logic.

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/core/theme/app_colors.dart';
-import 'package:notiva/core/theme/app_text_styles.dart';
+import 'package:notiva/core/theme/app_fonts.dart';
 
 class AppTheme {
   AppTheme._();
@@ -20,8 +20,8 @@ class AppTheme {
         error: AppColors.error,
       ),
       fontFamily: isArabic
-          ? AppTextStyles.fontFamilyArabic
-          : AppTextStyles.fontFamilyOutfit,
+          ? AppFonts.ibmPlexSansArabic
+          : AppFonts.outfit,
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.surfaceLight,
         foregroundColor: AppColors.textPrimaryLight,
@@ -57,8 +57,8 @@ class AppTheme {
         brightness: Brightness.dark,
       ),
       fontFamily: isArabic
-          ? AppTextStyles.fontFamilyArabic
-          : AppTextStyles.fontFamilyOutfit,
+          ? AppFonts.ibmPlexSansArabic
+          : AppFonts.outfit,
       appBarTheme: const AppBarTheme(
         backgroundColor: AppColors.surfaceDark,
         foregroundColor: AppColors.textPrimaryDark,
