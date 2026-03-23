@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -36,7 +37,9 @@ void main() async {
           },
         ),
       ],
-      child: const NotivaApp(),
+      child: DevicePreview(
+        builder: (context) => const NotivaApp(),
+      ),
     ),
   );
 }

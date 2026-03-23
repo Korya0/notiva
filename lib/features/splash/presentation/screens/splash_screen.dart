@@ -89,7 +89,9 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               Text(
                 'otiva',
-                style: AppTextStyles.font70w400Secondary(context),
+                style: AppTextStyles.font70w400Secondary(
+                  context,
+                ),
               ),
             ],
           ),
