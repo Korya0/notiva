@@ -6,7 +6,7 @@ class ScaleAnimation extends StatelessWidget {
     required this.child,
     super.key,
     this.duration = const Duration(milliseconds: 1000),
-    this.begin = 1.0,
+    this.begin = 0.9,
     this.end = 1.2,
     this.curve = Curves.easeOutCubic,
   });

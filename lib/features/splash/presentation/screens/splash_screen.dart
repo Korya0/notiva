@@ -1,13 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notiva/core/common/animations/scale_animation.dart';
 import 'package:notiva/core/common/widgets/asset_preloader.dart';
 import 'package:notiva/core/constants/app_assets.dart';
 import 'package:notiva/core/di/service_locator.dart';
 import 'package:notiva/core/router/app_routes.dart';
+import 'package:notiva/core/theme/app_colors.dart';
 import 'package:notiva/core/theme/app_text_styles.dart';
 import 'package:notiva/core/theme/system_ui_config.dart';
 
@@ -44,11 +44,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _initializeApp() async {
     final brandingTimer = Future.wait([
-      Future<void>.delayed(const Duration(seconds: 2000)),
+      Future<void>.delayed(
+        const Duration(seconds: 2),
+      ),
       locator.allReady(),
     ]);
-
-    FlutterNativeSplash.remove();
 
     const isAuthenticated = false;
 
@@ -69,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.scaffoldBackgroundLight,
       body: Center(
         child: ScaleAnimation(
           child: Row(
@@ -91,7 +91,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 'otiva',
                 style: AppTextStyles.font70w400Secondary(
                   context,
-                ),
+                ).copyWith(color: AppColors.deepNavyBlue),
               ),
             ],
           ),
