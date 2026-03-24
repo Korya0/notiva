@@ -28,6 +28,7 @@ class OnboardingPageSlider extends StatelessWidget {
         itemBuilder: (context, index) {
           final step = steps[index];
           return OnboardingStepWidget(
+            key: ValueKey(index),
             title: step.title,
             description: step.description,
             imagePath: step.imagePath,

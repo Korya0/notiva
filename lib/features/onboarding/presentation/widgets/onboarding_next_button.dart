@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:notiva/core/Extension/app_localizations_extension.dart';
+import 'package:notiva/core/common/animations/pulse_animation.dart';
 import 'package:notiva/core/common/widgets/app_button.dart';
 import 'package:notiva/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:notiva/features/onboarding/presentation/cubit/onboarding_state.dart';
@@ -14,30 +15,31 @@ class OnboardingNextButton extends StatelessWidget {
   });
 
   final PageController pageController;
-  final OnboardingState state; // Using standard naming or the specific state type
+  final OnboardingState state;
   final OnboardingCubit cubit;
 
   @override
   Widget build(BuildContext context) {
-    // Note: state must have isLastStep and is OnboardingLoading properties
     final l10n = context.l10n;
     return Expanded(
       flex: 2,
-      child: AppButton(
-        onPressed: () {
-          if (state.isLastStep) {
-            unawaited(cubit.submit());
-          } else {
-            unawaited(
-              pageController.nextPage(
-                duration: const Duration(milliseconds: 300),
-                curve: Curves.easeInOut,
-              ),
-            );
-          }
-        },
-        isLoading: state is OnboardingLoading,
-        text: state.isLastStep ? l10n.getStarted : l10n.next,
+      child: PulseAnimation(
+        child: AppButton(
+          onPressed: () {
+            if (state.isLastStep) {
+              unawaited(cubit.submit());
+            } else {
+              unawaited(
+                pageController.nextPage(
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeInOut,
+                ),
+              );
+            }
+          },
+          isLoading: state is OnboardingLoading,
+          text: state.isLastStep ? l10n.getStarted : l10n.next,
+        ),
       ),
     );
   }

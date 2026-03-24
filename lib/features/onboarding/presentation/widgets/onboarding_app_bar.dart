@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notiva/core/Common/animations/fade_in_slide_animation.dart';
 import 'package:notiva/core/Extension/app_localizations_extension.dart';
 import 'package:notiva/core/common/widgets/app_text_button.dart';
 import 'package:notiva/core/router/app_routes.dart';
@@ -18,9 +19,12 @@ class OnboardingAppBar extends StatelessWidget implements PreferredSizeWidget {
       actionsPadding: const EdgeInsets.symmetric(horizontal: 16),
       actions: [
         if (!state.isLastStep)
-          AppTextButton(
-            onPressed: () => context.go(AppRoutes.login),
-            text: context.l10n.skip,
+          FadeInSlideAnimation(
+            beginOffset: const Offset(0.2, 0), // Slide from right
+            child: AppTextButton(
+              onPressed: () => context.go(AppRoutes.login),
+              text: context.l10n.skip,
+            ),
           ),
       ],
     );
