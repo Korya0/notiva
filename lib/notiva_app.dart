@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notiva/core/Extension/app_localizations_extension.dart';
 import 'package:notiva/core/common/widgets/keyboard_dismisser.dart';
 import 'package:notiva/core/global_state/locale/app_locale_cubit.dart';
 import 'package:notiva/core/global_state/locale/app_locale_state.dart';
@@ -32,7 +33,7 @@ class NotivaApp extends StatelessWidget {
 
             return KeyboardDismisser(
               child: MaterialApp.router(
-                title: 'Notiva',
+                onGenerateTitle: (context) => context.l10n.appTitle,
                 debugShowCheckedModeBanner: false,
                 routerConfig: appRouter,
                 theme: AppTheme.lightTheme(locale),

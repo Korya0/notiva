@@ -5,6 +5,7 @@ import 'package:notiva/core/global_state/locale/app_locale_cubit.dart';
 import 'package:notiva/core/global_state/theme/app_theme_cubit.dart';
 import 'package:notiva/core/storage/app_storage.dart';
 import 'package:notiva/core/storage/shared_preferences_storage.dart';
+import 'package:notiva/features/onboarding/data/data_sources/onboarding_local_data_source.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final GetIt locator = GetIt.instance;
@@ -33,4 +34,8 @@ void _setupCore() {
     );
 }
 
-void _setupFeatures() {}
+void _setupFeatures() {
+  locator.registerLazySingleton<OnboardingLocalDataSource>(
+    () => OnboardingLocalDataSource(locator<AppStorage>()),
+  );
+}

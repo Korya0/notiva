@@ -104,29 +104,59 @@ abstract class AppLocalizations {
   /// **'Notiva'**
   String get appTitle;
 
-  /// A simple greeting
+  /// No description provided for @onboardingStep1Title.
   ///
   /// In en, this message translates to:
-  /// **'Hello World!'**
-  String get helloWorld;
+  /// **'Capture Your Thoughts'**
+  String get onboardingStep1Title;
 
-  /// No description provided for @success.
+  /// No description provided for @onboardingStep1Description.
   ///
   /// In en, this message translates to:
-  /// **'Operation successful'**
-  String get success;
+  /// **'Quickly jot down ideas, notes, and reminders anywhere, anytime.'**
+  String get onboardingStep1Description;
 
-  /// No description provided for @error.
+  /// No description provided for @onboardingStep2Title.
   ///
   /// In en, this message translates to:
-  /// **'An error occurred'**
-  String get error;
+  /// **'Organize with Ease'**
+  String get onboardingStep2Title;
 
-  /// No description provided for @loading.
+  /// No description provided for @onboardingStep2Description.
   ///
   /// In en, this message translates to:
-  /// **'Loading...'**
-  String get loading;
+  /// **'Group your notes by categories or tags to keep everything structured.'**
+  String get onboardingStep2Description;
+
+  /// No description provided for @onboardingStep3Title.
+  ///
+  /// In en, this message translates to:
+  /// **'Access Everywhere'**
+  String get onboardingStep3Title;
+
+  /// No description provided for @onboardingStep3Description.
+  ///
+  /// In en, this message translates to:
+  /// **'Your notes are synced across all your devices seamlessly.'**
+  String get onboardingStep3Description;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @next.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get next;
+
+  /// No description provided for @getStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Get Started'**
+  String get getStarted;
 }
 
 class _AppLocalizationsDelegate

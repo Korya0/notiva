@@ -1,7 +1,12 @@
 {
   "appTitle": "نوتيفا",
-  "helloWorld": "أهلاً بك!",
-  "success": "تمت العملية بنجاح",
-  "error": "حدث خطأ ما",
-  "loading": "جاري التحميل..."
+  "onboardingStep1Title": "سجل أفكارك",
+  "onboardingStep1Description": "دوّن أفكارك وملاحظاتك وتذكيراتك بسرعة في أي مكان وفي أي وقت.",
+  "onboardingStep2Title": "نظم بسهولة",
+  "onboardingStep2Description": "صنف ملاحظاتك حسب الفئات أو الوسوم للحفاظ على تنظيم كل شيء.",
+  "onboardingStep3Title": "الوصول من أي مكان",
+  "onboardingStep3Description": "ملاحظاتك متزامنة عبر جميع أجهزتك بسلاسة.",
+  "skip": "تخطي",
+  "next": "التالي",
+  "getStarted": "ابدأ الآن"
 }

@@ -12,14 +12,32 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Notiva';
 
   @override
-  String get helloWorld => 'Hello World!';
+  String get onboardingStep1Title => 'Capture Your Thoughts';
 
   @override
-  String get success => 'Operation successful';
+  String get onboardingStep1Description =>
+      'Quickly jot down ideas, notes, and reminders anywhere, anytime.';
 
   @override
-  String get error => 'An error occurred';
+  String get onboardingStep2Title => 'Organize with Ease';
 
   @override
-  String get loading => 'Loading...';
+  String get onboardingStep2Description =>
+      'Group your notes by categories or tags to keep everything structured.';
+
+  @override
+  String get onboardingStep3Title => 'Access Everywhere';
+
+  @override
+  String get onboardingStep3Description =>
+      'Your notes are synced across all your devices seamlessly.';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get next => 'Next';
+
+  @override
+  String get getStarted => 'Get Started';
 }

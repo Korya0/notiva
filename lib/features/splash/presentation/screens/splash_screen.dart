@@ -1,15 +1,14 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notiva/core/common/animations/scale_animation.dart';
-import 'package:notiva/core/common/widgets/asset_preloader.dart';
-import 'package:notiva/core/constants/app_assets.dart';
 import 'package:notiva/core/di/service_locator.dart';
 import 'package:notiva/core/router/app_routes.dart';
 import 'package:notiva/core/theme/app_colors.dart';
-import 'package:notiva/core/theme/app_text_styles.dart';
 import 'package:notiva/core/theme/system_ui_config.dart';
+import 'package:notiva/core/utils/asset_preloader.dart';
+import 'package:notiva/features/onboarding/data/data_sources/onboarding_local_data_source.dart';
+import 'package:notiva/features/splash/presentation/widgets/app_brand_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -43,22 +42,25 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _initializeApp() async {
-    final brandingTimer = Future.wait([
-      Future<void>.delayed(
-        const Duration(seconds: 2),
-      ),
-      locator.allReady(),
+    final splashTimer = Future<void>.delayed(const Duration(seconds: 3));
+    final brandingTimer = locator.allReady();
+
+    await Future.wait([
+      splashTimer,
+      brandingTimer,
     ]);
 
+    final isOnboardingCompleted = locator<OnboardingLocalDataSource>()
+        .isOnboardingCompleted();
     const isAuthenticated = false;
-
-    await brandingTimer;
 
     if (mounted) {
       SystemUiConfig.setAppMode();
-      // let this be here for now
-      // ignore: dead_code
-      if (isAuthenticated) {
+      if (!isOnboardingCompleted) {
+        context.go(AppRoutes.onboarding);
+        //
+        // ignore: dead_code
+      } else if (isAuthenticated) {
         context.go(AppRoutes.home);
       } else {
         context.go(AppRoutes.login);
@@ -68,33 +70,11 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: AppColors.scaffoldBackgroundLight,
       body: Center(
         child: ScaleAnimation(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(
-                AppAssets.logo,
-                width: 50,
-                errorBuilder: (context, error, stackTrace) {
-                  return Text(
-                    'N',
-                    style: AppTextStyles.font70w400Secondary(
-                      context,
-                    ),
-                  );
-                },
-              ),
-              Text(
-                'otiva',
-                style: AppTextStyles.font70w400Secondary(
-                  context,
-                ).copyWith(color: AppColors.deepNavyBlue),
-              ),
-            ],
-          ),
+          child: AppBrandLogo(),
         ),
       ),
     );

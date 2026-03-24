@@ -46,6 +46,8 @@ flutter:
   assets:
     - shorebird.yaml
     - assets/images/
+    - assets/images/splash/
+    - assets/images/onboarding/
 
   fonts:
     - family: Outfit
