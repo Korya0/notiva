@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// 🎨 Reusable Scale Animation based on TweenAnimationBuilder
 class ScaleAnimation extends StatelessWidget {
   const ScaleAnimation({
     required this.child,

@@ -45,9 +45,9 @@ This document breaks down each phase into the smallest possible technical steps 
     - [x] Build `SplashScreen` with Premium Scale Animation (**Pattern K6**).
     - [x] Implement `locator.allReady()` check to wait for async dependencies.
     - [x] Implement Auth check & navigation logic.
-- [ ] **Onboarding Flow**:
-    - [ ] Build 3-step Wizard (Notes, AI, OCR) (**Pattern B8**).
-    - [ ] Implement "Get Started" persistence logic.
+- [x] **Onboarding Flow**:
+    - [x] Build 3-step Wizard (Notes, AI, OCR) (**Pattern B8**).
+    - [x] Implement "Get Started" persistence logic.
 
 ### 4. Authentication Flow
 - [ ] **Firebase Setup**:

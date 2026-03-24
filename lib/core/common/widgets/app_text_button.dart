@@ -17,23 +17,36 @@ class AppTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (context.isIOS) {
-      return CupertinoButton(
-        onPressed: onPressed,
-        padding: EdgeInsets.zero,
-        child: Text(
-          text,
-          style: textStyle ?? AppTextStyles.font16W900MainColor(context),
-        ),
-      );
-    }
+    return context.isIOS
+        ? _buildCupertinoButton(context)
+        : _buildMaterialButton(context);
+  }
 
+  Widget _buildCupertinoButton(BuildContext context) {
+    return CupertinoButton(
+      onPressed: onPressed,
+      padding: EdgeInsets.zero,
+      minimumSize: Size.zero,
+      child: _buildText(context),
+    );
+  }
+
+  Widget _buildMaterialButton(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: Text(
-        text,
-        style: textStyle ?? AppTextStyles.font16W900MainColor(context),
+      style: TextButton.styleFrom(
+        padding: EdgeInsets.zero,
+        minimumSize: Size.zero,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
+      child: _buildText(context),
+    );
+  }
+
+  Widget _buildText(BuildContext context) {
+    return Text(
+      text,
+      style: textStyle ?? AppTextStyles.font16W900MainColor(context),
     );
   }
 }

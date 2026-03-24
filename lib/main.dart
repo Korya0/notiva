@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notiva/core/di/service_locator.dart';
@@ -34,7 +36,11 @@ void main() async {
           },
         ),
       ],
-      child: const NotivaApp(),
+      child: kIsWeb
+          ? DevicePreview(
+              builder: (context) => const NotivaApp(),
+            )
+          : const NotivaApp(),
     ),
   );
 }
