@@ -1,9 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notiva/core/utils/app_logger.dart';
 
-/// A global observer for all BLoCs and Cubits in the app.
-/// 
-/// It logs all transitions, changes, and errors to [AppLogger].
 class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
