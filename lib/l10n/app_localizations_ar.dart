@@ -40,4 +40,41 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get getStarted => 'ابدأ الآن';
+
+  @override
+  String get ok => 'حسناً';
+
+  @override
+  String get error => 'خطأ';
+
+  @override
+  String get information => 'تنبيه';
+
+  @override
+  String get serverError => 'حدث خطأ في الخادم. يرجى المحاولة لاحقاً.';
+
+  @override
+  String get networkError => 'لا يوجد اتصال بالإنترنت. يرجى التحقق من الشبكة.';
+
+  @override
+  String get invalidCredentials =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+
+  @override
+  String get emailAlreadyInUse => 'هذا البريد الإلكتروني مسجل بالفعل.';
+
+  @override
+  String get weakPassword => 'كلمة المرور ضعيفة جداً.';
+
+  @override
+  String get tooManyRequests => 'محاولات كثيرة جداً. يرجى المحاولة لاحقاً.';
+
+  @override
+  String get userDisabled => 'لقد تم تعطيل هذا الحساب.';
+
+  @override
+  String get operationNotAllowed => 'هذه العملية غير مسموح بها.';
+
+  @override
+  String get unknownError => 'حدث خطأ غير معروف في عملية المصادقة.';
 }

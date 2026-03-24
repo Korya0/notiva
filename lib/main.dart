@@ -8,10 +8,11 @@ import 'package:notiva/core/di/service_locator.dart';
 import 'package:notiva/core/global_state/locale/app_locale_cubit.dart';
 import 'package:notiva/core/global_state/theme/app_theme_cubit.dart';
 import 'package:notiva/core/theme/system_ui_config.dart';
+import 'package:notiva/core/utils/app_initializer.dart';
 import 'package:notiva/notiva_app.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  await AppInitializer.init();
 
   SystemUiConfig.setSplashMode();
 

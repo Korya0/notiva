@@ -40,4 +40,41 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get getStarted => 'Get Started';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get information => 'Information';
+
+  @override
+  String get serverError => 'A server error occurred. Please try again later.';
+
+  @override
+  String get networkError =>
+      'No internet connection. Please check your network.';
+
+  @override
+  String get invalidCredentials => 'Invalid email or password.';
+
+  @override
+  String get emailAlreadyInUse => 'This email is already registered.';
+
+  @override
+  String get weakPassword => 'The password is too weak.';
+
+  @override
+  String get tooManyRequests => 'Too many attempts. Please try again later.';
+
+  @override
+  String get userDisabled => 'This account has been disabled.';
+
+  @override
+  String get operationNotAllowed => 'This operation is not allowed.';
+
+  @override
+  String get unknownError => 'An unknown authentication error occurred.';
 }
