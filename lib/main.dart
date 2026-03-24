@@ -36,7 +36,7 @@ void main() async {
           },
         ),
       ],
-      child: kIsWeb
+      child: kIsWeb && !kReleaseMode
           ? DevicePreview(
               builder: (context) => const NotivaApp(),
             )
