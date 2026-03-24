@@ -29,12 +29,15 @@ dependencies:
   # Routing
   go_router: ^17.1.0
 
+  # Native
+  flutter_native_splash: ^2.4.4
+  device_preview: ^1.3.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   very_good_analysis: ^10.2.0
   flutter_launcher_icons: ^0.13.1
-  flutter_native_splash: ^2.4.4
 
 flutter:
   generate: true
@@ -42,6 +45,9 @@ flutter:
   
   assets:
     - shorebird.yaml
+    - assets/images/
+    - assets/images/splash/
+    - assets/images/onboarding/
 
   fonts:
     - family: Outfit

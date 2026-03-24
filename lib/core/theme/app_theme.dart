@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notiva/core/theme/app_colors.dart';
-import 'package:notiva/core/theme/app_text_styles.dart';
+import 'package:notiva/core/theme/app_fonts.dart';
+import 'package:notiva/core/theme/app_theme_extension.dart';
 
 class AppTheme {
   AppTheme._();
@@ -11,19 +12,20 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.light,
       primaryColor: AppColors.vibrantTeal,
-      scaffoldBackgroundColor: AppColors.backgroundLight,
+      scaffoldBackgroundColor: AppColors.scaffoldBackgroundLight,
+      extensions: const [
+        AppColorsExtension.light,
+      ],
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.vibrantTeal,
         primary: AppColors.vibrantTeal,
         secondary: AppColors.deepNavyBlue,
-        surface: AppColors.surfaceLight,
+        surface: AppColors.containerLight,
         error: AppColors.error,
       ),
-      fontFamily: isArabic
-          ? AppTextStyles.fontFamilyArabic
-          : AppTextStyles.fontFamilyOutfit,
+      fontFamily: isArabic ? AppFonts.ibmPlexSansArabic : AppFonts.outfit,
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.surfaceLight,
+        backgroundColor: AppColors.scaffoldBackgroundLight,
         foregroundColor: AppColors.textPrimaryLight,
         elevation: 0,
         centerTitle: true,
@@ -47,20 +49,21 @@ class AppTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       primaryColor: AppColors.vibrantTeal,
-      scaffoldBackgroundColor: AppColors.backgroundDark,
+      scaffoldBackgroundColor: AppColors.scaffoldBackgroundDark,
+      extensions: const [
+        AppColorsExtension.dark,
+      ],
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.vibrantTeal,
         primary: AppColors.vibrantTeal,
         secondary: AppColors.deepNavyBlue,
-        surface: AppColors.surfaceDark,
+        surface: AppColors.containerDark,
         error: AppColors.error,
         brightness: Brightness.dark,
       ),
-      fontFamily: isArabic
-          ? AppTextStyles.fontFamilyArabic
-          : AppTextStyles.fontFamilyOutfit,
+      fontFamily: isArabic ? AppFonts.ibmPlexSansArabic : AppFonts.outfit,
       appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.surfaceDark,
+        backgroundColor: AppColors.scaffoldBackgroundDark,
         foregroundColor: AppColors.textPrimaryDark,
         elevation: 0,
         centerTitle: true,

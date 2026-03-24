@@ -3,11 +3,13 @@
   "@appTitle": {
     "description": "The title of the application"
   },
-  "helloWorld": "Hello World!",
-  "@helloWorld": {
-    "description": "A simple greeting"
-  },
-  "success": "Operation successful",
-  "error": "An error occurred",
-  "loading": "Loading..."
+  "onboardingStep1Title": "Capture Your Thoughts",
+  "onboardingStep1Description": "Quickly jot down ideas, notes, and reminders anywhere, anytime.",
+  "onboardingStep2Title": "Organize with Ease",
+  "onboardingStep2Description": "Group your notes by categories or tags to keep everything structured.",
+  "onboardingStep3Title": "Access Everywhere",
+  "onboardingStep3Description": "Your notes are synced across all your devices seamlessly.",
+  "skip": "Skip",
+  "next": "Next",
+  "getStarted": "Get Started"
 }

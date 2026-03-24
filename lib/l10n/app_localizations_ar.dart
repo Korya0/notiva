@@ -12,14 +12,32 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appTitle => 'نوتيفا';
 
   @override
-  String get helloWorld => 'أهلاً بك!';
+  String get onboardingStep1Title => 'سجل أفكارك';
 
   @override
-  String get success => 'تمت العملية بنجاح';
+  String get onboardingStep1Description =>
+      'دوّن أفكارك وملاحظاتك وتذكيراتك بسرعة في أي مكان وفي أي وقت.';
 
   @override
-  String get error => 'حدث خطأ ما';
+  String get onboardingStep2Title => 'نظم بسهولة';
 
   @override
-  String get loading => 'جاري التحميل...';
+  String get onboardingStep2Description =>
+      'صنف ملاحظاتك حسب الفئات أو الوسوم للحفاظ على تنظيم كل شيء.';
+
+  @override
+  String get onboardingStep3Title => 'الوصول من أي مكان';
+
+  @override
+  String get onboardingStep3Description =>
+      'ملاحظاتك متزامنة عبر جميع أجهزتك بسلاسة.';
+
+  @override
+  String get skip => 'تخطي';
+
+  @override
+  String get next => 'التالي';
+
+  @override
+  String get getStarted => 'ابدأ الآن';
 }
