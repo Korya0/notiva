@@ -11,7 +11,7 @@ class GlobalLocalDataSource {
   }
 
   ThemeMode? getThemeMode() {
-    final name = _storage.read(StorageKeys.themeMode);
+    final name = _storage.read<String>(StorageKeys.themeMode);
     if (name == null) return null;
     return ThemeMode.values.firstWhere(
       (e) => e.name == name,
@@ -24,7 +24,7 @@ class GlobalLocalDataSource {
   }
 
   Locale? getLocale() {
-    final code = _storage.read(StorageKeys.localeCode);
+    final code = _storage.read<String>(StorageKeys.localeCode);
     if (code == null) return null;
     return Locale(code);
   }

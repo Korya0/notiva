@@ -91,7 +91,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get welcomeBack => 'مرحباً بك مجدداً 👋';
 
   @override
-  String get enterDetails => 'أدخل بياناتك';
+  String get enterDetails => 'أدخل بياناتك للوصول إلى حسابك';
 
   @override
   String get email => 'البريد الإلكتروني';
@@ -103,11 +103,86 @@ class AppLocalizationsAr extends AppLocalizations {
   String get login => 'تسجيل الدخول';
 
   @override
-  String get continueWithGoogle => 'المتابعة بحساب Google';
+  String get signup => 'إنشاء حساب';
+
+  @override
+  String get register => 'سجل الآن';
+
+  @override
+  String get createAccount => 'إنشاء حساب جديد';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
+
+  @override
+  String get forgotPassword => 'نسيت كلمة المرور؟';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get sendResetLink => 'إرسال رابط استعادة كلمة المرور';
+
+  @override
+  String get passwordResetEmailSent =>
+      'تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني.';
+
+  @override
+  String get rememberPassword => 'تذكرت كلمة المرور؟';
 
   @override
   String get back => 'رجوع';
 
   @override
+  String get signupDescription => 'أدخل بياناتك لإنشاء حساب جديد';
+
+  @override
+  String get fullName => 'الاسم الكامل';
+
+  @override
+  String get confirmPassword => 'تأكيد كلمة المرور';
+
+  @override
+  String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
+
+  @override
   String get authErrorTitle => 'خطأ في المصادقة';
+
+  @override
+  String get loginToContinue => 'سجل دخولك للمتابعة';
+
+  @override
+  String get success => 'نجاح';
+
+  @override
+  String get passwordResetInstruction =>
+      'أدخل بريدك الإلكتروني المسجل لإرسال رابط إعادة تعيين كلمة المرور.';
+
+  @override
+  String get requiresRecentLogin =>
+      'تتطلب هذه العملية تسجيلاً حديثاً للدخول. يرجى تسجيل الدخول مرة أخرى.';
+
+  @override
+  String get accountExistsWithDifferentCredential =>
+      'هناك حساب مسجل بالفعل بنفس البريد الإلكتروني ولكن باستخدام وسيلة دخول مختلفة.';
+
+  @override
+  String get invalidActionCode => 'رمز الإجراء غير صالح أو منتهي الصلاحية.';
+
+  @override
+  String get authCancelled => 'تم إلغاء عملية المصادقة.';
+
+  @override
+  String get noArabicAllowed => 'غير مسموح باستعمال الحروف العربية';
+
+  @override
+  String get checkEmailAndSpam =>
+      'يرجى التحقق من بريدك الإلكتروني لإعادة تعيين كلمة المرور. إذا لم تجدها، تأكد من فحص مجلد الرسائل المزعجة (Spam) أيضاً.';
+
+  @override
+  String get invalidEmailParts =>
+      'يجب أن يتضمن البريد الإلكتروني \'@\' ونطاقاً (مثال: .com)';
+
+  @override
+  String get nameTooShort => 'يجب أن يكون الاسم 3 أحرف على الأقل';
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:notiva/core/Extension/platform_helper_extension.dart';
+import 'package:notiva/core/utils/extensions/platform_helper_extension.dart';
 
 class AppLoadingIndicator extends StatelessWidget {
   const AppLoadingIndicator({

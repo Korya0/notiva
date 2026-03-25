@@ -91,7 +91,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeBack => 'Welcome back 👋';
 
   @override
-  String get enterDetails => 'Enter your details';
+  String get enterDetails => 'Enter your details to access your account';
 
   @override
   String get email => 'Email Address';
@@ -103,11 +103,86 @@ class AppLocalizationsEn extends AppLocalizations {
   String get login => 'Login';
 
   @override
-  String get continueWithGoogle => 'Continue with Google';
+  String get signup => 'Sign Up';
+
+  @override
+  String get register => 'Sign Up';
+
+  @override
+  String get createAccount => 'Create Account';
+
+  @override
+  String get dontHaveAccount => 'Don\'t have an account?';
+
+  @override
+  String get forgotPassword => 'Forgot Password?';
+
+  @override
+  String get resetPassword => 'Reset Password';
+
+  @override
+  String get sendResetLink => 'Send Reset Link';
+
+  @override
+  String get passwordResetEmailSent =>
+      'A password reset link has been sent to your email.';
+
+  @override
+  String get rememberPassword => 'Remembered your password?';
 
   @override
   String get back => 'Back';
 
   @override
+  String get signupDescription => 'Enter your information to sign up';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
   String get authErrorTitle => 'Authentication Error';
+
+  @override
+  String get loginToContinue => 'Login to your account to continue';
+
+  @override
+  String get success => 'Success';
+
+  @override
+  String get passwordResetInstruction =>
+      'Enter your registered email below to receive a password reset link.';
+
+  @override
+  String get requiresRecentLogin =>
+      'This operation requires a recent login. Please log in again.';
+
+  @override
+  String get accountExistsWithDifferentCredential =>
+      'An account already exists with this email user a different sign-in method.';
+
+  @override
+  String get invalidActionCode => 'The action code is invalid or has expired.';
+
+  @override
+  String get authCancelled => 'Authentication was cancelled.';
+
+  @override
+  String get noArabicAllowed => 'Arabic characters are not allowed';
+
+  @override
+  String get checkEmailAndSpam =>
+      'Please check your email to reset your password. If you don\'t see it, be sure to check your spam folder.';
+
+  @override
+  String get invalidEmailParts =>
+      'Email must include \'@\' and a domain (e.g., .com)';
+
+  @override
+  String get nameTooShort => 'Name must be at least 3 characters';
 }

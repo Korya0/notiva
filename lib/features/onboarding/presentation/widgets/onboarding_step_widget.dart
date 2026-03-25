@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notiva/core/Extension/theme_helper_extension.dart';
-import 'package:notiva/core/common/animations/fade_in_slide_animation.dart';
-import 'package:notiva/core/theme/app_text_styles.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:notiva/core/utils/extensions/text_theme_extension.dart';
+import 'package:notiva/core/utils/extensions/theme_helper_extension.dart';
 
 class OnboardingStepWidget extends StatelessWidget {
   const OnboardingStepWidget({
@@ -23,44 +23,55 @@ class OnboardingStepWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Spacer(flex: 2),
+
           // Image Container
-          FadeInSlideAnimation(
-            duration: const Duration(milliseconds: 600),
-            beginOffset: const Offset(0, 0.1),
-            child: Image.asset(
-              imagePath,
-              height: MediaQuery.sizeOf(context).height * 0.35,
-              fit: BoxFit.contain,
-            ),
-          ),
+          Image.asset(
+                imagePath,
+                height: MediaQuery.sizeOf(context).height * 0.35,
+                fit: BoxFit.contain,
+              )
+              .animate(delay: 200.ms)
+              .fadeIn(duration: 00.ms, curve: Curves.easeOutCubic)
+              .slide(
+                begin: const Offset(0, 0.2),
+                duration: 800.ms,
+                curve: Curves.easeOutCubic,
+              ),
+
           const Spacer(),
           // Title
-          FadeInSlideAnimation(
-            delay: const Duration(milliseconds: 200),
-            duration: const Duration(milliseconds: 600),
-            beginOffset: const Offset(0, 0.1),
-            child: Text(
-              title,
-              textAlign: TextAlign.center,
-              style: AppTextStyles.font24W700Secondary(context).copyWith(
-                color: context.colors.textPrimary,
+          Text(
+                title,
+                textAlign: TextAlign.center,
+                style: context.textStyles.headlineLarge!.copyWith(
+                  color: context.colors.textPrimary,
+                ),
+              )
+              .animate(delay: 200.ms)
+              .fadeIn(duration: 00.ms, curve: Curves.easeOutCubic)
+              .slide(
+                begin: const Offset(0, 0.2),
+                duration: 800.ms,
+                curve: Curves.easeOutCubic,
               ),
-            ),
-          ),
+
           const SizedBox(height: 16),
           // Description
-          FadeInSlideAnimation(
-            delay: const Duration(milliseconds: 400),
-            duration: const Duration(milliseconds: 600),
-            beginOffset: const Offset(0, 0.1),
-            child: Text(
-              description,
-              textAlign: TextAlign.center,
-              style: AppTextStyles.font16W400textSecondary(context).copyWith(
-                color: context.colors.textSecondary,
+          Text(
+                description,
+                textAlign: TextAlign.center,
+                style: context.textStyles.bodyMedium!.copyWith(
+                  color: context.colors.textSecondary,
+                ),
+              )
+              .animate(delay: 200.ms)
+              .fadeIn(duration: 00.ms, curve: Curves.easeOutCubic)
+              .slide(
+                begin: const Offset(0, 0.2),
+                duration: 800.ms,
+                curve: Curves.easeOutCubic,
               ),
-            ),
-          ),
+
           const Spacer(flex: 3),
         ],
       ),

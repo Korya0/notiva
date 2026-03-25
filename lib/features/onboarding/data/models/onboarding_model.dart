@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:notiva/core/Extension/app_localizations_extension.dart';
 import 'package:notiva/core/constants/app_assets.dart';
+import 'package:notiva/core/utils/extensions/app_localizations_extension.dart';
 
 class OnboardingData {
   OnboardingData({

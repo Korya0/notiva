@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:notiva/core/utils/app_logger.dart';
-import 'package:notiva/core/utils/connectivity_service.dart';
+import 'package:notiva/core/services/connectivity_service.dart';
+import 'package:notiva/core/utils/logging/app_logger.dart';
 import 'package:notiva/features/auth/data/mappers/auth_mapper.dart';
 import 'package:notiva/features/auth/data/mappers/firebase_auth_error_mapper.dart';
 import 'package:notiva/features/auth/domain/entities/auth_failure.dart';
@@ -60,15 +60,18 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
 
   @override
   Future<Either<AuthFailure, AuthUser>> signUpWithEmail({
+    required String name,
     required String email,
     required String password,
   }) {
-    return _safeAuthCall(
-      () => _firebaseAuth.createUserWithEmailAndPassword(
+    return _safeAuthCall(() async {
+      final cred = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
-      ),
-    );
+      );
+      await cred.user?.updateDisplayName(name);
+      return cred;
+    });
   }
 
   @override

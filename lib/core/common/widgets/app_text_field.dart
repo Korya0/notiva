@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:notiva/core/Extension/platform_helper_extension.dart';
+import 'package:flutter/services.dart';
+import 'package:notiva/core/utils/extensions/platform_helper_extension.dart';
+import 'package:notiva/core/utils/extensions/text_theme_extension.dart';
+import 'package:notiva/core/utils/extensions/theme_helper_extension.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField({
@@ -16,6 +19,8 @@ class AppTextField extends StatelessWidget {
     this.suffixIcon,
     this.textInputAction = TextInputAction.next,
     this.onEditingComplete,
+    this.autovalidateMode = AutovalidateMode.onUserInteraction,
+    this.inputFormatters,
   });
 
   final TextEditingController controller;
@@ -29,6 +34,8 @@ class AppTextField extends StatelessWidget {
   final Widget? suffixIcon;
   final TextInputAction textInputAction;
   final VoidCallback? onEditingComplete;
+  final AutovalidateMode autovalidateMode;
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   Widget build(BuildContext context) {
@@ -47,23 +54,46 @@ class AppTextField extends StatelessWidget {
       onChanged: onChanged,
       textInputAction: textInputAction,
       onEditingComplete: onEditingComplete,
-      style: Theme.of(context).textTheme.bodyLarge,
+      autovalidateMode: autovalidateMode,
+      inputFormatters: inputFormatters,
+      style: context.textStyles.bodyLarge,
       decoration: InputDecoration(
         hintText: hintText,
         labelText: labelText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
+        filled: true,
+        fillColor: context.colors.containerBackground.withValues(alpha: 0.3),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide.none,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.outline.withValues(alpha: 0.5),
+            color: context.colors.textSecondary.withValues(alpha: 0.2),
           ),
         ),
-        filled: true,
-        fillColor: Theme.of(context).colorScheme.surfaceContainerHighest.withValues(alpha: 0.3),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: context.colors.mainColor,
+            width: 1.5,
+          ),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: context.colors.error,
+          ),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: context.colors.error,
+            width: 1.5,
+          ),
+        ),
       ),
     );
   }
@@ -77,9 +107,7 @@ class AppTextField extends StatelessWidget {
             padding: const EdgeInsets.only(left: 4, bottom: 8),
             child: Text(
               labelText!,
-              style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
+              style: context.textStyles.labelMedium,
             ),
           ),
         ],
@@ -91,6 +119,8 @@ class AppTextField extends StatelessWidget {
           onChanged: onChanged,
           textInputAction: textInputAction,
           onEditingComplete: onEditingComplete,
+          autovalidateMode: autovalidateMode,
+          inputFormatters: inputFormatters,
           placeholder: hintText,
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           prefix: prefixIcon != null

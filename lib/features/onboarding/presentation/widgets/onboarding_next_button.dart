@@ -1,8 +1,9 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:notiva/core/Extension/app_localizations_extension.dart';
-import 'package:notiva/core/common/animations/pulse_animation.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:notiva/core/common/widgets/app_button.dart';
+import 'package:notiva/core/utils/extensions/app_localizations_extension.dart';
 import 'package:notiva/features/onboarding/presentation/cubit/onboarding_cubit.dart';
 import 'package:notiva/features/onboarding/presentation/cubit/onboarding_state.dart';
 
@@ -23,24 +24,31 @@ class OnboardingNextButton extends StatelessWidget {
     final l10n = context.l10n;
     return Expanded(
       flex: 2,
-      child: PulseAnimation(
-        child: AppButton(
-          onPressed: () {
-            if (state.isLastStep) {
-              unawaited(cubit.submit());
-            } else {
-              unawaited(
-                pageController.nextPage(
-                  duration: const Duration(milliseconds: 300),
-                  curve: Curves.easeInOut,
-                ),
-              );
-            }
-          },
-          isLoading: state is OnboardingLoading,
-          text: state.isLastStep ? l10n.getStarted : l10n.next,
-        ),
-      ),
+
+      child:
+          AppButton(
+                onPressed: () {
+                  if (state.isLastStep) {
+                    unawaited(cubit.submit());
+                  } else {
+                    unawaited(
+                      pageController.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      ),
+                    );
+                  }
+                },
+                isLoading: state is OnboardingLoading,
+                text: state.isLastStep ? l10n.getStarted : l10n.next,
+              )
+              .animate(onPlay: (controller) => controller.repeat(reverse: true))
+              .scale(
+                begin: const Offset(1, 1),
+                end: const Offset(1.05, 1.05),
+                duration: 1500.ms,
+                curve: Curves.easeInOut,
+              ),
     );
   }
 }

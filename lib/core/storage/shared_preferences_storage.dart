@@ -6,13 +6,23 @@ class SharedPreferencesStorage implements AppStorage {
   final SharedPreferences _prefs;
 
   @override
-  String? read(String key) {
-    return _prefs.getString(key);
+  Future<void> write(String key, dynamic value) async {
+    if (value is String) {
+      await _prefs.setString(key, value);
+    } else if (value is bool) {
+      await _prefs.setBool(key, value);
+    } else if (value is int) {
+      await _prefs.setInt(key, value);
+    } else if (value is double) {
+      await _prefs.setDouble(key, value);
+    } else {
+      throw Exception('Type not supported by SharedPreferences');
+    }
   }
 
   @override
-  Future<void> write(String key, String value) async {
-    await _prefs.setString(key, value);
+  T? read<T>(String key) {
+    return _prefs.get(key) as T?;
   }
 
   @override

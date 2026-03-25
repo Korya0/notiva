@@ -12,13 +12,13 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     required this.error,
   });
 
-  final Color? mainColor;
-  final Color? secondaryColor;
-  final Color? scaffoldBackground;
-  final Color? textPrimary;
-  final Color? textSecondary;
-  final Color? containerBackground;
-  final Color? error;
+  final Color mainColor;
+  final Color secondaryColor;
+  final Color scaffoldBackground;
+  final Color textPrimary;
+  final Color textSecondary;
+  final Color containerBackground;
+  final Color error;
 
   @override
   ThemeExtension<AppColorsExtension> copyWith({
@@ -50,27 +50,19 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
       return this;
     }
     return AppColorsExtension(
-      mainColor: Color.lerp(mainColor, other.mainColor, t),
-      secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t),
-      scaffoldBackground: Color.lerp(
-        scaffoldBackground,
-        other.scaffoldBackground,
-        t,
-      ),
-      textPrimary: Color.lerp(textPrimary, other.textPrimary, t),
-      textSecondary: Color.lerp(textSecondary, other.textSecondary, t),
-      containerBackground: Color.lerp(
-        containerBackground,
-        other.containerBackground,
-        t,
-      ),
-      error: Color.lerp(error, other.error, t),
+      mainColor: Color.lerp(mainColor, other.mainColor, t) ?? mainColor,
+      secondaryColor: Color.lerp(secondaryColor, other.secondaryColor, t) ?? secondaryColor,
+      scaffoldBackground: Color.lerp(scaffoldBackground, other.scaffoldBackground, t) ?? scaffoldBackground,
+      textPrimary: Color.lerp(textPrimary, other.textPrimary, t) ?? textPrimary,
+      textSecondary: Color.lerp(textSecondary, other.textSecondary, t) ?? textSecondary,
+      containerBackground: Color.lerp(containerBackground, other.containerBackground, t) ?? containerBackground,
+      error: Color.lerp(error, other.error, t) ?? error,
     );
   }
 
   static const AppColorsExtension light = AppColorsExtension(
-    mainColor: AppColors.vibrantTeal,
-    secondaryColor: AppColors.deepNavyBlue,
+    mainColor: AppColors.deepTeal,
+    secondaryColor: AppColors.midnightBlue,
     scaffoldBackground: AppColors.scaffoldBackgroundLight,
     textPrimary: AppColors.textPrimaryLight,
     textSecondary: AppColors.textSecondaryLight,
@@ -79,8 +71,8 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   );
 
   static const AppColorsExtension dark = AppColorsExtension(
-    mainColor: AppColors.vibrantTeal,
-    secondaryColor: AppColors.deepNavyBlue,
+    mainColor: AppColors.accentTeal,
+    secondaryColor: AppColors.platinum,
     scaffoldBackground: AppColors.scaffoldBackgroundDark,
     textPrimary: AppColors.textPrimaryDark,
     textSecondary: AppColors.textSecondaryDark,

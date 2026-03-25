@@ -39,6 +39,22 @@ class OperationNotAllowedFailure extends AuthFailure {
   const OperationNotAllowedFailure();
 }
 
+class RequiresRecentLoginFailure extends AuthFailure {
+  const RequiresRecentLoginFailure();
+}
+
+class AccountExistsWithDifferentCredentialFailure extends AuthFailure {
+  const AccountExistsWithDifferentCredentialFailure();
+}
+
+class InvalidActionCodeFailure extends AuthFailure {
+  const InvalidActionCodeFailure();
+}
+
+class CancellationFailure extends AuthFailure {
+  const CancellationFailure();
+}
+
 class UnknownAuthFailure extends AuthFailure {
   const UnknownAuthFailure();
 }

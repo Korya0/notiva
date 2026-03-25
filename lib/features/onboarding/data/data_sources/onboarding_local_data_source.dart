@@ -7,10 +7,10 @@ class OnboardingLocalDataSource {
   final AppStorage appStorage;
 
   Future<void> setOnboardingCompleted() async {
-    await appStorage.write(StorageKeys.isOnboardingCompleted, 'true');
+    await appStorage.write(StorageKeys.isOnboardingCompleted, true);
   }
 
   bool isOnboardingCompleted() {
-    return appStorage.read(StorageKeys.isOnboardingCompleted) == 'true';
+    return appStorage.read<bool>(StorageKeys.isOnboardingCompleted) ?? false;
   }
 }

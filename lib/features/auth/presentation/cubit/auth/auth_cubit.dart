@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:notiva/core/utils/app_logger.dart';
+import 'package:notiva/core/utils/logging/app_logger.dart';
 import 'package:notiva/features/auth/domain/entities/auth_user.dart';
 import 'package:notiva/features/auth/domain/repositories/auth_repository.dart';
 import 'package:notiva/features/auth/presentation/cubit/auth/auth_state.dart';
@@ -46,12 +46,14 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> signUpWithEmail({
+    required String name,
     required String email,
     required String password,
   }) async {
     emit(const AuthLoading());
 
     final result = await _authRepository.signUpWithEmail(
+      name: name,
       email: email,
       password: password,
     );

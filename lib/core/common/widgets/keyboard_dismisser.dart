@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class KeyboardDismisser extends StatelessWidget {
-  const KeyboardDismisser({required this.child, super.key});
+  const KeyboardDismisser({
+    required this.child,
+    super.key,
+  });
+
   final Widget child;
 
   @override
@@ -10,9 +14,8 @@ class KeyboardDismisser extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       onTap: () {
         final currentFocus = FocusScope.of(context);
-        if (!currentFocus.hasPrimaryFocus &&
-            currentFocus.focusedChild != null) {
-          FocusManager.instance.primaryFocus?.unfocus();
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
         }
       },
       child: child,

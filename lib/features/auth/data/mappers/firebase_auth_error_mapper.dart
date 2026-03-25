@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:notiva/core/utils/app_logger.dart';
+import 'package:notiva/core/utils/logging/app_logger.dart';
 import 'package:notiva/features/auth/domain/entities/auth_failure.dart';
 
 class FirebaseAuthErrorMapper {
@@ -24,6 +24,13 @@ class FirebaseAuthErrorMapper {
         return const TooManyRequestsFailure();
       case 'network-request-failed':
         return const NetworkFailure();
+      case 'requires-recent-login':
+        return const RequiresRecentLoginFailure();
+      case 'account-exists-with-different-credential':
+        return const AccountExistsWithDifferentCredentialFailure();
+      case 'expired-action-code':
+      case 'invalid-action-code':
+        return const InvalidActionCodeFailure();
       default:
         AppLogger.error('Firebase Auth Exception (Unhandled): ${e.code}');
         return const UnknownAuthFailure();

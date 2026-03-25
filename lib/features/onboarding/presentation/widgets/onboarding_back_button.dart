@@ -1,7 +1,8 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:notiva/core/Extension/theme_helper_extension.dart';
 import 'package:notiva/core/common/widgets/app_outlined_button.dart';
+import 'package:notiva/core/utils/extensions/theme_helper_extension.dart';
 
 class OnboardingBackButton extends StatelessWidget {
   const OnboardingBackButton({required this.pageController, super.key});

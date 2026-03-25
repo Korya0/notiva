@@ -98,7 +98,7 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
-  /// The title of the application
+  /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
   /// **'Notiva'**
@@ -257,7 +257,7 @@ abstract class AppLocalizations {
   /// No description provided for @enterDetails.
   ///
   /// In en, this message translates to:
-  /// **'Enter your details'**
+  /// **'Enter your details to access your account'**
   String get enterDetails;
 
   /// No description provided for @email.
@@ -278,11 +278,59 @@ abstract class AppLocalizations {
   /// **'Login'**
   String get login;
 
-  /// No description provided for @continueWithGoogle.
+  /// No description provided for @signup.
   ///
   /// In en, this message translates to:
-  /// **'Continue with Google'**
-  String get continueWithGoogle;
+  /// **'Sign Up'**
+  String get signup;
+
+  /// No description provided for @register.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get register;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccount;
+
+  /// No description provided for @dontHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account?'**
+  String get dontHaveAccount;
+
+  /// No description provided for @forgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot Password?'**
+  String get forgotPassword;
+
+  /// No description provided for @resetPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get resetPassword;
+
+  /// No description provided for @sendResetLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Send Reset Link'**
+  String get sendResetLink;
+
+  /// No description provided for @passwordResetEmailSent.
+  ///
+  /// In en, this message translates to:
+  /// **'A password reset link has been sent to your email.'**
+  String get passwordResetEmailSent;
+
+  /// No description provided for @rememberPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Remembered your password?'**
+  String get rememberPassword;
 
   /// No description provided for @back.
   ///
@@ -290,11 +338,101 @@ abstract class AppLocalizations {
   /// **'Back'**
   String get back;
 
+  /// No description provided for @signupDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your information to sign up'**
+  String get signupDescription;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatch;
+
   /// No description provided for @authErrorTitle.
   ///
   /// In en, this message translates to:
   /// **'Authentication Error'**
   String get authErrorTitle;
+
+  /// No description provided for @loginToContinue.
+  ///
+  /// In en, this message translates to:
+  /// **'Login to your account to continue'**
+  String get loginToContinue;
+
+  /// No description provided for @success.
+  ///
+  /// In en, this message translates to:
+  /// **'Success'**
+  String get success;
+
+  /// No description provided for @passwordResetInstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your registered email below to receive a password reset link.'**
+  String get passwordResetInstruction;
+
+  /// No description provided for @requiresRecentLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'This operation requires a recent login. Please log in again.'**
+  String get requiresRecentLogin;
+
+  /// No description provided for @accountExistsWithDifferentCredential.
+  ///
+  /// In en, this message translates to:
+  /// **'An account already exists with this email user a different sign-in method.'**
+  String get accountExistsWithDifferentCredential;
+
+  /// No description provided for @invalidActionCode.
+  ///
+  /// In en, this message translates to:
+  /// **'The action code is invalid or has expired.'**
+  String get invalidActionCode;
+
+  /// No description provided for @authCancelled.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication was cancelled.'**
+  String get authCancelled;
+
+  /// No description provided for @noArabicAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic characters are not allowed'**
+  String get noArabicAllowed;
+
+  /// No description provided for @checkEmailAndSpam.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your email to reset your password. If you don\'t see it, be sure to check your spam folder.'**
+  String get checkEmailAndSpam;
+
+  /// No description provided for @invalidEmailParts.
+  ///
+  /// In en, this message translates to:
+  /// **'Email must include \'@\' and a domain (e.g., .com)'**
+  String get invalidEmailParts;
+
+  /// No description provided for @nameTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Name must be at least 3 characters'**
+  String get nameTooShort;
 }
 
 class _AppLocalizationsDelegate

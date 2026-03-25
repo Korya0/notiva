@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
-import 'package:notiva/core/Common/animations/fade_in_slide_animation.dart';
-import 'package:notiva/core/Extension/app_localizations_extension.dart';
 import 'package:notiva/core/common/widgets/app_text_button.dart';
 import 'package:notiva/core/router/app_routes.dart';
+import 'package:notiva/core/utils/extensions/app_localizations_extension.dart';
 import 'package:notiva/features/onboarding/presentation/cubit/onboarding_state.dart';
 
 class OnboardingAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -19,13 +19,17 @@ class OnboardingAppBar extends StatelessWidget implements PreferredSizeWidget {
       actionsPadding: const EdgeInsets.symmetric(horizontal: 16),
       actions: [
         if (!state.isLastStep)
-          FadeInSlideAnimation(
-            beginOffset: const Offset(0.2, 0), // Slide from right
-            child: AppTextButton(
-              onPressed: () => context.go(AppRoutes.login),
-              text: context.l10n.skip,
-            ),
-          ),
+          AppTextButton(
+                onPressed: () => context.go(AppRoutes.login),
+                text: context.l10n.skip,
+              )
+              .animate(delay: 200.ms)
+              .fadeIn(duration: 00.ms, curve: Curves.easeOutCubic)
+              .slide(
+                begin: const Offset(0, 0.2),
+                duration: 800.ms,
+                curve: Curves.easeOutCubic,
+              ),
       ],
     );
   }

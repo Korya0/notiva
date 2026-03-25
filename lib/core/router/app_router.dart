@@ -5,13 +5,14 @@ import 'package:notiva/core/di/service_locator.dart';
 import 'package:notiva/core/router/app_routes.dart';
 import 'package:notiva/core/router/app_transitions.dart';
 import 'package:notiva/features/auth/presentation/cubit/auth/auth_cubit.dart';
+import 'package:notiva/features/auth/presentation/views/forgot_password_view.dart';
+import 'package:notiva/features/auth/presentation/views/login_view.dart';
+import 'package:notiva/features/auth/presentation/views/sign_up_view.dart';
 import 'package:notiva/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:notiva/features/splash/presentation/screens/splash_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: AppRoutes.splash,
-  debugLogDiagnostics: true, // Helpful for development
-
   routes: [
     GoRoute(
       path: AppRoutes.splash,
@@ -36,7 +37,29 @@ final GoRouter appRouter = GoRouter(
         state: state,
         child: BlocProvider<AuthCubit>(
           create: (_) => locator<AuthCubit>(),
-          child: const Scaffold(body: Center(child: Text('Login'))),
+          child: const LoginView(),
+        ),
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.register,
+      pageBuilder: (context, state) => AppTransitions.slideFromRight(
+        context: context,
+        state: state,
+        child: BlocProvider<AuthCubit>(
+          create: (_) => locator<AuthCubit>(),
+          child: const SignUpView(),
+        ),
+      ),
+    ),
+    GoRoute(
+      path: AppRoutes.forgotPassword,
+      pageBuilder: (context, state) => AppTransitions.slideFromRight(
+        context: context,
+        state: state,
+        child: BlocProvider<AuthCubit>(
+          create: (_) => locator<AuthCubit>(),
+          child: const ForgotPasswordView(),
         ),
       ),
     ),
@@ -50,7 +73,6 @@ final GoRouter appRouter = GoRouter(
     ),
   ],
 
-  // 3. Global Error Screen (404 Page)
   errorBuilder: (context, state) => Scaffold(
     body: Center(
       child: Column(
