@@ -34,13 +34,16 @@ Implement a premium, secure, and performant Authentication system (Android, iOS,
 
 ---
 
-### 🎨 Phase 3: Presentation Layer (UI & State)
-- #### [NEW] [auth_cubit.dart](file:///d:/flutter/flutter_Projects/notiva/lib/features/auth/presentation/cubit/auth_cubit.dart)
-  - **Pattern**: **B3 Form Validation**. Manages values, errors (Maps), and `FormStatus`.
-- #### [NEW] [app_text_field.dart](file:///d:/flutter/flutter_Projects/notiva/lib/core/common/widgets/app_text_field.dart)
-  - **Logic**: Reusable and platform-aware (iOS specific details handled).
-- #### [NEW] [auth_wizard_view.dart](file:///d:/flutter/flutter_Projects/notiva/lib/features/auth/presentation/views/auth_wizard_view.dart)
-  - **Layout**: **CustomScrollView** with elastic bouncing.
+### 🎨 Phase 3: "Luxurious Minimalism" (Solid & Deep)
+- #### [NEW] [auth_screen.dart](file:///d:/flutter/flutter_Projects/notiva/lib/features/auth/presentation/views/auth_screen.dart)
+  - **Concept**: A deep, rich solid background (Dark Indigo/Charcoal) using a very subtle radial gradient for focus.
+- #### [NEW] [auth_premium_card.dart](file:///d:/flutter/flutter_Projects/notiva/lib/features/auth/presentation/widgets/auth_premium_card.dart)
+  - **Design**: **Solid Surface** with soft, layered shadows (Elevation: 8) and a 0.5px high-contrast accent border.
+  - **Logic**: Integrates `AuthFormCubit` and `AuthCubit` for the login/signup flow.
+- #### [NEW] [staggered_auth_fields.dart](file:///d:/flutter/flutter_Projects/notiva/lib/features/auth/presentation/widgets/staggered_auth_fields.dart)
+  - **Animations**: Liquid-like staggered entry animations for all form fields.
+- #### [NEW] [social_auth_premium_buttons.dart](file:///d:/flutter/flutter_Projects/notiva/lib/features/auth/presentation/widgets/social_auth_premium_buttons.dart)
+  - **Aesthetics**: High-contrast, solid-color buttons for Google/Apple sign-in with premium branding icons.
   - **Widgets**: Reusing `AppButton`, `AppLoadingIndicator`, `GlassContainer`.
   - **Animations**: `FadeInSlide`.
 

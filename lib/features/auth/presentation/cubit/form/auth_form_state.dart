@@ -23,9 +23,8 @@ final class AuthFormState extends Equatable {
 
   bool get isFirstStep => currentStep == 0;
   bool get isLastStep => currentStep == totalSteps - 1;
-  bool get isValid => 
-      errors.values.every((e) => e == null) && 
-      formData.isNotEmpty;
+  bool get isValid =>
+      errors.values.every((e) => e == null) && formData.isNotEmpty;
 
   AuthFormState copyWith({
     int? currentStep,
@@ -37,7 +36,7 @@ final class AuthFormState extends Equatable {
   }) {
     return AuthFormState(
       currentStep: currentStep ?? this.currentStep,
-      totalSteps: this.totalSteps,
+      totalSteps: totalSteps,
       formData: formData ?? this.formData,
       errors: errors ?? this.errors,
       status: status ?? this.status,
@@ -48,12 +47,12 @@ final class AuthFormState extends Equatable {
 
   @override
   List<Object?> get props => [
-        currentStep,
-        totalSteps,
-        formData,
-        errors,
-        status,
-        errorMessage,
-        isPasswordVisible,
-      ];
+    currentStep,
+    totalSteps,
+    formData,
+    errors,
+    status,
+    errorMessage,
+    isPasswordVisible,
+  ];
 }

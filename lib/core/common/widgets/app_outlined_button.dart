@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notiva/core/Extension/platform_helper_extension.dart';
 import 'package:notiva/core/Extension/theme_helper_extension.dart';
 import 'package:notiva/core/common/widgets/app_loading_indicator.dart';
 import 'package:notiva/core/theme/app_text_styles.dart';
+import 'package:notiva/core/utils/haptic_feedback_helper.dart';
 
 class AppOutlinedButton extends StatelessWidget {
   const AppOutlinedButton({
@@ -15,6 +18,7 @@ class AppOutlinedButton extends StatelessWidget {
     this.height = 56,
     this.borderRadius = 16,
     this.disabledColor,
+    this.useHaptic = true,
     super.key,
   }) : assert(text != null || child != null, 'Must provide text or child');
 
@@ -26,22 +30,41 @@ class AppOutlinedButton extends StatelessWidget {
   final double height;
   final double borderRadius;
   final Color? disabledColor;
+  final bool useHaptic;
 
   @override
   Widget build(BuildContext context) {
+    final effectiveOnPressed = onPressed == null
+        ? null
+        : () {
+            if (useHaptic) unawaited(HapticFeedbackHelper.lightImpact());
+            onPressed!();
+          };
+
     final themeColor = (color ?? context.colors.mainColor)!;
     final effectiveDisabledColor =
         disabledColor ?? themeColor.withValues(alpha: 0.5);
 
     return context.isIOS
-        ? _buildCupertinoButton(context, themeColor, effectiveDisabledColor)
-        : _buildMaterialButton(context, themeColor, effectiveDisabledColor);
+        ? _buildCupertinoButton(
+            context,
+            themeColor,
+            effectiveDisabledColor,
+            effectiveOnPressed,
+          )
+        : _buildMaterialButton(
+            context,
+            themeColor,
+            effectiveDisabledColor,
+            effectiveOnPressed,
+          );
   }
 
   Widget _buildCupertinoButton(
     BuildContext context,
     Color themeColor,
     Color disabledColor,
+    void Function()? effectiveOnPressed,
   ) {
     return Container(
       width: double.infinity,
@@ -51,7 +74,7 @@ class AppOutlinedButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       ),
       child: CupertinoButton(
-        onPressed: isLoading ? null : onPressed,
+        onPressed: isLoading ? null : effectiveOnPressed,
         padding: EdgeInsets.zero,
         borderRadius: BorderRadius.circular(borderRadius),
         child: _buildButtonContent(context, themeColor),
@@ -63,9 +86,10 @@ class AppOutlinedButton extends StatelessWidget {
     BuildContext context,
     Color themeColor,
     Color disabledColor,
+    void Function()? effectiveOnPressed,
   ) {
     return OutlinedButton(
-      onPressed: isLoading ? null : onPressed,
+      onPressed: isLoading ? null : effectiveOnPressed,
       style: OutlinedButton.styleFrom(
         minimumSize: Size(double.infinity, height),
         side: BorderSide(color: isLoading ? disabledColor : themeColor),

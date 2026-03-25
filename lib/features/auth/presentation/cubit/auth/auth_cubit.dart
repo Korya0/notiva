@@ -91,7 +91,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   @override
   Future<void> close() {
-    _userSubscription.cancel();
+    unawaited(_userSubscription.cancel());
     return super.close();
   }
 }
