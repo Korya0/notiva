@@ -51,7 +51,7 @@ class _SignUpFormState extends State<SignUpForm> {
             EmailField(controller: _ec),
             const SizedBox(height: 16),
             PasswordField(controller: _pc),
-            const SizedBox(height: 16),
+            const SizedBox(height: 32),
             AppButton(
               text: context.l10n.signup,
               isLoading: s is AuthLoading,

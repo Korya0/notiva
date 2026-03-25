@@ -48,6 +48,7 @@ dependencies:
 
   # Animations
   flutter_animate: ^4.5.2
+  lottie: ^3.3.2
 
 
   # flutter run --dart-define-from-file=secrets.json
@@ -68,6 +69,7 @@ flutter:
     - assets/images/
     - assets/images/splash/
     - assets/images/onboarding/
+    - assets/lottie/
 
   fonts:
     - family: Outfit

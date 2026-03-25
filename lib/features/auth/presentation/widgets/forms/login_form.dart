@@ -58,7 +58,7 @@ class _LoginFormState extends State<LoginForm> {
                 onPressed: () => context.push(AppRoutes.forgotPassword),
               ),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 32),
             AppButton(
               text: context.l10n.login,
               isLoading: s is AuthLoading,

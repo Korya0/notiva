@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:lottie/lottie.dart';
+import 'package:notiva/core/constants/app_assets.dart';
 import 'package:notiva/core/utils/extensions/app_localizations_extension.dart';
 import 'package:notiva/core/utils/extensions/platform_helper_extension.dart';
 import 'package:notiva/core/utils/extensions/text_theme_extension.dart';
@@ -75,20 +77,11 @@ class AppDialogs {
         title: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color:
-                    (isError ? context.colors.error : context.colors.mainColor)
-                        .withValues(alpha: 0.1),
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                isError ? Icons.error_outline : Icons.check_circle_outline,
-                color: isError
-                    ? context.colors.error
-                    : context.colors.mainColor,
-                size: 32,
+            SizedBox(
+              height: 100,
+              child: Lottie.asset(
+                isError ? AppAssets.lottieError : AppAssets.lottieSuccess,
+                repeat: false,
               ),
             ),
             const SizedBox(height: 16),
