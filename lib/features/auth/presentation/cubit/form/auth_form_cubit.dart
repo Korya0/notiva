@@ -78,4 +78,13 @@ class AuthFormCubit extends Cubit<AuthFormState> {
     }
     emit(state.copyWith(errors: updatedErrors));
   }
+
+  bool validateEmailOnly() {
+    final email = state.formData['email'] ?? '';
+    final error = _validate('email', email);
+    final updatedErrors = Map<String, String?>.from(state.errors)
+      ..['email'] = error;
+    emit(state.copyWith(errors: updatedErrors));
+    return error == null && email.isNotEmpty;
+  }
 }

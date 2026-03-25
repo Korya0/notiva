@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-abstract class AuthFailure extends Equatable {
+sealed class AuthFailure extends Equatable {
   const AuthFailure();
 
   @override

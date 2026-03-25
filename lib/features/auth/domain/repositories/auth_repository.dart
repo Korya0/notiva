@@ -14,9 +14,9 @@ abstract class AuthRepository {
     required String email,
     required String password,
   });
-  Future<Either<AuthFailure, AuthUser>> signInWithGoogle();
-
   Future<void> signOut();
+
+  Future<Either<AuthFailure, Unit>> forgotPassword({required String email});
 
   AuthUser get currentUser;
 }

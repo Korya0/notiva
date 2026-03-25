@@ -33,6 +33,10 @@ final class AuthError extends AuthState {
   List<Object?> get props => [failure];
 }
 
+final class AuthPasswordResetSent extends AuthState {
+  const AuthPasswordResetSent();
+}
+
 final class AuthUnauthenticated extends AuthState {
   const AuthUnauthenticated();
 }

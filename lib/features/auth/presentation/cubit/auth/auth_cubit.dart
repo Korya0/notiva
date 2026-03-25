@@ -68,25 +68,25 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
-  Future<void> signInWithGoogle() async {
+  Future<void> signOut() async {
+    await _authRepository.signOut();
+  }
+
+  Future<void> forgotPassword(String email) async {
     emit(const AuthLoading());
 
-    final result = await _authRepository.signInWithGoogle();
+    final result = await _authRepository.forgotPassword(email: email);
 
     result.fold(
       (failure) {
-        AppLogger.error('Google sign in failed or canceled', failure);
+        AppLogger.error('Forgot password failed', failure);
         emit(AuthError(failure));
       },
-      (user) {
-        AppLogger.info('Google sign in success: ${user.id}');
-        // Note: _onUserChanged will emit AuthAuthenticated
+      (_) {
+        AppLogger.info('Password reset email sent to: $email');
+        emit(const AuthPasswordResetSent());
       },
     );
-  }
-
-  Future<void> signOut() async {
-    await _authRepository.signOut();
   }
 
   @override
