@@ -227,8 +227,74 @@ abstract class AppLocalizations {
   /// No description provided for @unknownError.
   ///
   /// In en, this message translates to:
-  /// **'An unknown authentication error occurred.'**
+  /// **'An unknown error occurred during authentication.'**
   String get unknownError;
+
+  /// No description provided for @fieldRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get fieldRequired;
+
+  /// No description provided for @invalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid email format'**
+  String get invalidEmail;
+
+  /// No description provided for @passwordTooShort.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordTooShort;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome back 👋'**
+  String get welcomeBack;
+
+  /// No description provided for @enterDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your details'**
+  String get enterDetails;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get email;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @continueWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue with Google'**
+  String get continueWithGoogle;
+
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
+  /// No description provided for @authErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication Error'**
+  String get authErrorTitle;
 }
 
 class _AppLocalizationsDelegate

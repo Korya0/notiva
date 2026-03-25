@@ -23,5 +23,16 @@
   "tooManyRequests": "Too many attempts. Please try again later.",
   "userDisabled": "This account has been disabled.",
   "operationNotAllowed": "This operation is not allowed.",
-  "unknownError": "An unknown authentication error occurred."
+  "unknownError": "An unknown error occurred during authentication.",
+  "fieldRequired": "This field is required",
+  "invalidEmail": "Invalid email format",
+  "passwordTooShort": "Password must be at least 6 characters",
+  "welcomeBack": "Welcome back 👋",
+  "enterDetails": "Enter your details",
+  "email": "Email Address",
+  "password": "Password",
+  "login": "Login",
+  "continueWithGoogle": "Continue with Google",
+  "back": "Back",
+  "authErrorTitle": "Authentication Error"
 }

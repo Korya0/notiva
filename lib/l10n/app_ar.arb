@@ -20,5 +20,16 @@
   "tooManyRequests": "محاولات كثيرة جداً. يرجى المحاولة لاحقاً.",
   "userDisabled": "لقد تم تعطيل هذا الحساب.",
   "operationNotAllowed": "هذه العملية غير مسموح بها.",
-  "unknownError": "حدث خطأ غير معروف في عملية المصادقة."
+  "unknownError": "حدث خطأ غير معروف في عملية المصادقة.",
+  "fieldRequired": "هذا الحقل مطلوب",
+  "invalidEmail": "صيغة البريد الإلكتروني غير صحيحة",
+  "passwordTooShort": "يجب ألا تقل كلمة المرور عن 6 أحرف",
+  "welcomeBack": "مرحباً بك مجدداً 👋",
+  "enterDetails": "أدخل بياناتك",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "login": "تسجيل الدخول",
+  "continueWithGoogle": "المتابعة بحساب Google",
+  "back": "رجوع",
+  "authErrorTitle": "خطأ في المصادقة"
 }

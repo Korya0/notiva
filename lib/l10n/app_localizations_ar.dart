@@ -77,4 +77,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get unknownError => 'حدث خطأ غير معروف في عملية المصادقة.';
+
+  @override
+  String get fieldRequired => 'هذا الحقل مطلوب';
+
+  @override
+  String get invalidEmail => 'صيغة البريد الإلكتروني غير صحيحة';
+
+  @override
+  String get passwordTooShort => 'يجب ألا تقل كلمة المرور عن 6 أحرف';
+
+  @override
+  String get welcomeBack => 'مرحباً بك مجدداً 👋';
+
+  @override
+  String get enterDetails => 'أدخل بياناتك';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get continueWithGoogle => 'المتابعة بحساب Google';
+
+  @override
+  String get back => 'رجوع';
+
+  @override
+  String get authErrorTitle => 'خطأ في المصادقة';
 }

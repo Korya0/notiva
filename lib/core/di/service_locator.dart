@@ -13,6 +13,8 @@ import 'package:notiva/core/storage/shared_preferences_storage.dart';
 import 'package:notiva/core/utils/connectivity_service.dart';
 import 'package:notiva/features/auth/data/repositories/firebase_auth_repository_impl.dart';
 import 'package:notiva/features/auth/domain/repositories/auth_repository.dart';
+import 'package:notiva/features/auth/presentation/cubit/auth/auth_cubit.dart';
+import 'package:notiva/features/auth/presentation/cubit/form/auth_form_cubit.dart';
 import 'package:notiva/features/onboarding/data/data_sources/onboarding_local_data_source.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -57,7 +59,7 @@ void _setupFeatures() {
         unawaited(
           instance.initialize(
             clientId: kIsWeb ? webId : iosId,
-            serverClientId: webId,
+            serverClientId: kIsWeb ? null : webId,
           ),
         );
         return instance;
@@ -69,6 +71,12 @@ void _setupFeatures() {
         googleSignIn: locator<GoogleSignIn>(),
         connectivityService: locator<ConnectivityService>(),
       ),
+    )
+    ..registerFactory<AuthCubit>(
+      () => AuthCubit(locator<AuthRepository>()),
+    )
+    ..registerFactory<AuthFormCubit>(
+      AuthFormCubit.new,
     )
     ..registerLazySingleton<OnboardingLocalDataSource>(
       () => OnboardingLocalDataSource(locator<AppStorage>()),

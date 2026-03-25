@@ -61,7 +61,26 @@ This directory establishes our core authentication system, cleanly bifurcated in
 
 ---
 
-**Lead Summary:**  
-Impressive baseline system! The abstractions perfectly translate our architecture boundaries. Be mindful to rigidly follow the "Constructor injection" protocols within the Data layer, resolve the GoogleSignIn leakage, and keep an eye on avoiding architecture overkill to maintain "Senior-Level Simple" code. 
+## 4. Auth Presentation Layer (`lib/features/auth/presentation/cubit`)
 
-Let the work begin! 🚀
+### 📝 Explanation
+We adopted a **Senior-level decoupled architecture** by separating the global **Session State** from the temporary **Form Logic**. 
+- **`AuthCubit`**: A "Thin Cubit" that only manages the user's logged-in status by listening to the repository's stream.
+- **`AuthFormCubit`**: A specialized Cubit that merges our **B3 (Validation)** and **B8 (Multi-Step Wizard)** blueprints into one cohesive UI controller.
+
+### 👍 Pros
+*   **Single Responsibility (SRP):** Your UI logic (validation/steps) no longer pollutes your authentication logic. This makes both units easier to test and maintain.
+*   **Rule 01 Compliance:** Using **Sealed Classes** for `AuthState` ensures compile-time exhaustive checks and eliminates "Fat States" with dozens of nullable fields.
+*   **Reactive Session:** By subscribing to the `AuthRepository.user` stream, the `AuthCubit` automatically reflects the true state of the Firebase session without manual triggers.
+
+### 👎 Cons & Warnings
+*   **Orchestration Logic:** The UI layer (View) assumes more responsibility as it must now bridge the two cubits—taking validated data from `AuthFormCubit` to trigger the actual sign-in via `AuthCubit`. 
+
+### 💡 Tech Lead Advice
+*   **Exhaustive Pattern Matching:** Always use `switch (state)` on your `AuthState` in the UI. It forces you to handle the `AuthError` and `AuthLoading` states gracefully, preventing UI "dead ends".
+*   **Wizard Scalability:** The `formData` Map approach (B8) allows you to add/remove registration steps without ever changing the `AuthFormState` structure. This is how you build a scalable onboarding flow.
+
+---
+
+**Lead Summary:**  
+Fantastic architectural evolution! By separating the Session and Form concerns while integrating the B3/B8 standards, you've moved the codebase from a "standard" implementation to a "Senior/Staff" level standard that is ready for enterprise-scale UI complexity. Keep following the Sealed Class mandate! 🚀

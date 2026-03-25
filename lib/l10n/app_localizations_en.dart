@@ -76,5 +76,38 @@ class AppLocalizationsEn extends AppLocalizations {
   String get operationNotAllowed => 'This operation is not allowed.';
 
   @override
-  String get unknownError => 'An unknown authentication error occurred.';
+  String get unknownError => 'An unknown error occurred during authentication.';
+
+  @override
+  String get fieldRequired => 'This field is required';
+
+  @override
+  String get invalidEmail => 'Invalid email format';
+
+  @override
+  String get passwordTooShort => 'Password must be at least 6 characters';
+
+  @override
+  String get welcomeBack => 'Welcome back 👋';
+
+  @override
+  String get enterDetails => 'Enter your details';
+
+  @override
+  String get email => 'Email Address';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get continueWithGoogle => 'Continue with Google';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get authErrorTitle => 'Authentication Error';
 }

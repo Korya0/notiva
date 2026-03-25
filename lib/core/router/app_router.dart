@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:notiva/core/di/service_locator.dart';
 import 'package:notiva/core/router/app_routes.dart';
 import 'package:notiva/core/router/app_transitions.dart';
+import 'package:notiva/features/auth/presentation/cubit/auth/auth_cubit.dart';
 import 'package:notiva/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:notiva/features/splash/presentation/screens/splash_screen.dart';
 
@@ -31,7 +34,10 @@ final GoRouter appRouter = GoRouter(
       pageBuilder: (context, state) => AppTransitions.slideFromRight(
         context: context,
         state: state,
-        child: const Scaffold(body: Center(child: Text('Login'))),
+        child: BlocProvider<AuthCubit>(
+          create: (_) => locator<AuthCubit>(),
+          child: const Scaffold(body: Center(child: Text('Login'))),
+        ),
       ),
     ),
     GoRoute(
