@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:notiva/core/common/widgets/app_text_button.dart';
 import 'package:notiva/core/utils/extensions/theme_helper_extension.dart';
 
@@ -33,6 +34,6 @@ class AuthFooter extends StatelessWidget {
           onPressed: onActionPressed,
         ),
       ],
-    );
+    ).animate().fade(delay: 600.ms, duration: 400.ms);
   }
 }

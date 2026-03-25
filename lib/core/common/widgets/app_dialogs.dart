@@ -11,8 +11,8 @@ import 'package:notiva/core/utils/extensions/theme_helper_extension.dart';
 class AppDialogs {
   static Future<void> showInfoDialog({
     required BuildContext context,
-    required String title,
     required String message,
+    String? title,
     String? buttonText,
     bool isError = false,
     bool barrierDismissible = true,
@@ -38,10 +38,12 @@ class AppDialogs {
         context: context,
         barrierDismissible: barrierDismissible,
         builder: (dialogContext) => CupertinoAlertDialog(
-          title: Padding(
-            padding: const EdgeInsets.only(bottom: 8),
-            child: Text(title, style: titleStyle),
-          ),
+          title: title != null
+              ? Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Text(title, style: titleStyle),
+                )
+              : null,
           content: Text(message, style: messageStyle),
           actions: [
             CupertinoDialogAction(
@@ -84,8 +86,10 @@ class AppDialogs {
                 repeat: false,
               ),
             ),
-            const SizedBox(height: 16),
-            Text(title, style: titleStyle, textAlign: TextAlign.center),
+            if (title != null) ...[
+              const SizedBox(height: 16),
+              Text(title, style: titleStyle, textAlign: TextAlign.center),
+            ],
           ],
         ),
         content: Text(
@@ -133,7 +137,7 @@ class AppDialogs {
   }) async {
     return showInfoDialog(
       context: context,
-      title: title ?? context.l10n.error,
+      title: title,
       message: message,
       isError: true,
       barrierDismissible: false,
