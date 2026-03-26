@@ -20,4 +20,5 @@ abstract class AuthRepository {
   Future<Either<AuthFailure, Unit>> forgotPassword({required String email});
 
   AuthUser get currentUser;
+  Future<Either<AuthFailure, Unit>> validateSession();
 }

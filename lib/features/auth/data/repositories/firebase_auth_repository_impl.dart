@@ -99,4 +99,24 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
       return const Left(UnknownAuthFailure());
     }
   }
+
+  @override
+  Future<Either<AuthFailure, Unit>> validateSession() async {
+    final user = _firebaseAuth.currentUser;
+    if (user == null) return const Right(unit);
+
+    if (!_connectivityService.isConnected) {
+      return const Right(unit);
+    }
+
+    try {
+      await user.reload();
+      return const Right(unit);
+    } on FirebaseAuthException catch (e) {
+      return Left(FirebaseAuthErrorMapper.mapException(e));
+    } on Exception catch (e, stack) {
+      AppLogger.error('Session Validation Error', e, stack);
+      return const Left(UnknownAuthFailure());
+    }
+  }
 }

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notiva/core/storage/app_storage.dart';
 import 'package:notiva/core/storage/storage_keys.dart';
 import 'package:notiva/core/utils/logging/app_logger.dart';
+import 'package:notiva/features/auth/domain/entities/auth_failure.dart';
 import 'package:notiva/features/auth/domain/entities/auth_user.dart';
 import 'package:notiva/features/auth/domain/repositories/auth_repository.dart';
 import 'package:notiva/features/auth/presentation/cubit/auth/auth_state.dart';
@@ -28,9 +29,27 @@ class AuthCubit extends Cubit<AuthState> {
         displayName: _storage.read<String>(StorageKeys.userName),
       );
       emit(AuthAuthenticated(user));
+      unawaited(_validateSession());
     }
 
     _userSubscription = _authRepository.user.listen(_onUserChanged);
+  }
+
+  Future<void> _validateSession() async {
+    final result = await _authRepository.validateSession();
+    result.fold(
+      (failure) async {
+        if (failure is UserDisabledFailure ||
+            failure is InvalidCredentialsFailure) {
+          AppLogger.info(
+            'Security: Auth session expired detected on startup. User was logged out.',
+          );
+          emit(const AuthSessionExpired());
+          await signOut();
+        }
+      },
+      (_) => null,
+    );
   }
 
   Future<void> _onUserChanged(AuthUser user) async {
