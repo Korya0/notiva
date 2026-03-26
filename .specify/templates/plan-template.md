@@ -36,6 +36,8 @@
 - [ ] Layer boundaries respected (Clean Architecture)
 - [ ] Documentation strategy defined (Mission Explanation plan)
 - [ ] Unit tests plan for Cubits/Use Cases/Repos
+- [ ] Reactive Navigation (Router/RefreshStream)
+- [ ] Atomic Persistence (Storage Serialization)
 
 ## Project Structure
 

@@ -1,20 +1,15 @@
 <!--
 Sync Impact Report:
-- Version change: 0.0.0 → 1.1.0
+- Version change: 1.1.0 → 1.2.0
 - List of modified principles:
-    - [NEW] Principle I: Senior Identity & Simple-YAGNI
-    - [NEW] Principle II: Layered Clean Architecture
-    - [NEW] Principle III: State Management & DI
-    - [NEW] Principle IV: Performance & Modern Dart
-    - [NEW] Principle V: Lean Dependencies & Security
-    - [NEW] Principle VI: Documentation & Traceability (NON-NEGOTIABLE)
-    - [NEW] Principle VII: Mandatory Testing
-- Added sections: Security & Quality Standards, Development Workflow
+    - Principle III: Added guidance on Reactive Navigation using GoRouterRefreshStream.
+    - Principle V: Added guidance on Atomic Persistence and serializing storage writes.
+- Added sections: N/A
 - Removed sections: N/A
 - Templates requiring updates (✅ updated / ⚠ pending):
-    - .specify/templates/plan-template.md (⚠ pending)
-    - .specify/templates/spec-template.md (⚠ pending)
-- Follow-up TODOs: Align template files with new principles.
+    - .specify/templates/plan-template.md (✅ updated)
+    - .specify/templates/spec-template.md (✅ updated)
+- Follow-up TODOs: N/A
 -->
 
 # Notiva Constitution
@@ -27,14 +22,14 @@ Avoid over-engineering. Apply design patterns only if they provide real, immedia
 ### Principle II: Layered Clean Architecture
 Strict adherence to the layer boundary: `Presentation (UI/Bloc) -> Domain (Use Cases/Entities/Repo Interfaces) -> Data (Repos/DTOs/API)`. Business logic is forbidden in the UI. Domain entities must be independent of API models (DTOs). Direct repository access from the UI is prohibited.
 
-### Principle III: State Management & DI
-Use Cubit as the default state management for UI logic with **Sealed Classes** for states (no Freezed). Constructor injection is mandatory for Dependency Injection using **GetIt**. Use `DIHelper.registerFeature()` or `lazySingleton`/`factory`.
+### Principle III: State Management, DI & Reactive Navigation
+Use Cubit as the default state management for UI logic with **Sealed Classes** for states (no Freezed). Constructor injection is mandatory using **GetIt**. **Implement 🔄 Reactive Navigation** by linking `GoRouter` with auth/state streams via `GoRouterRefreshStream` to centralize redirection logic and eliminate manual navigation calls in UI listeners.
 
 ### Principle IV: Performance & Modern Dart
 Utilize `Isolate.run()` for heavy computation (JSON > 50KB, image processing). `const` constructors are mandatory wherever possible. Leverage modern Dart features: Records, Patterns, Sealed Classes, and dot shorthands. Avoid `Opacity` in animations; use `FadeTransition` or `AnimatedOpacity`.
 
-### Principle V: Lean Dependencies & Security
-Prioritize built-in Flutter framework components and standard Dart features over external packages. Every new dependency requires Tech Lead approval. No hardcoded secrets; use `--dart-define-from-file`. Securely store tokens using `flutter_secure_storage`.
+### Principle V: Lean Dependencies, Security & Atomic Persistence
+Prioritize built-in components. Every new dependency requires Tech Lead approval. No hardcoded secrets; use `--dart-define-from-file`. Securely store tokens using `flutter_secure_storage`. **Ensure Atomicity** in local storage by serializing concurrent writes (e.g., using a `Future` queue in Cubit listeners) to prevent race conditions during rapid state transitions.
 
 ### Principle VI: Documentation & Traceability (NON-NEGOTIABLE)
 All code MUST be documented. Naming should be self-documenting (classes `PascalCase`, variables `camelCase`). Use `MISSION_EXPLANATION.md` for major tasks to track rationale and implementation steps. "Doc as you go" is the standard.
@@ -58,4 +53,4 @@ Unit tests are mandatory for Cubits, Use Cases, and Repositories. Widget tests a
 
 This constitution supersedes all other experimental practices. Amendments require formal documentation, version increment, and a migration plan for existing code if necessary. All PRs and reviews must verify compliance with these principles.
 
-**Version**: 1.1.0 | **Ratified**: 2026-03-25 | **Last Amended**: 2026-03-25
+**Version**: 1.2.0 | **Ratified**: 2026-03-25 | **Last Amended**: 2026-03-26

@@ -18,6 +18,7 @@ class EmailField extends StatelessWidget {
       controller: controller,
       hintText: context.l10n.email,
       keyboardType: TextInputType.emailAddress,
+      autofillHints: const [AutofillHints.email],
       prefixIcon: const Icon(Icons.email_outlined),
       inputFormatters: [
         FilteringTextInputFormatter.deny(RegExp(r'[\u0600-\u06FF]')),

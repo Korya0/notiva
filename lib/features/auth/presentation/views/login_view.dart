@@ -24,9 +24,6 @@ class LoginView extends StatelessWidget {
       body: SafeArea(
         child: BlocListener<AuthCubit, AuthState>(
           listener: (c, s) {
-            if (s is AuthAuthenticated) {
-              return c.go(AppRoutes.home);
-            }
             if (s is AuthError) {
               unawaited(
                 AppDialogs.showErrorDialog(

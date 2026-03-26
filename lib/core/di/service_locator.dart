@@ -53,7 +53,12 @@ void _setupFeatures() {
         connectivityService: locator(),
       ),
     )
-    ..registerFactory<AuthCubit>(() => AuthCubit(locator()))
+    ..registerLazySingleton<AuthCubit>(
+      () => AuthCubit(
+        locator(),
+        locator(),
+      ),
+    )
     // Onboarding Feature
     ..registerLazySingleton<OnboardingLocalDataSource>(
       () => OnboardingLocalDataSource(locator()),

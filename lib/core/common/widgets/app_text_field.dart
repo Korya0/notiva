@@ -21,6 +21,7 @@ class AppTextField extends StatelessWidget {
     this.onEditingComplete,
     this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.inputFormatters,
+    this.autofillHints,
   });
 
   final TextEditingController controller;
@@ -36,6 +37,7 @@ class AppTextField extends StatelessWidget {
   final VoidCallback? onEditingComplete;
   final AutovalidateMode autovalidateMode;
   final List<TextInputFormatter>? inputFormatters;
+  final Iterable<String>? autofillHints;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +58,7 @@ class AppTextField extends StatelessWidget {
       onEditingComplete: onEditingComplete,
       autovalidateMode: autovalidateMode,
       inputFormatters: inputFormatters,
+      autofillHints: autofillHints,
       style: context.textStyles.bodyLarge,
       decoration: InputDecoration(
         hintText: hintText,
@@ -121,6 +124,7 @@ class AppTextField extends StatelessWidget {
           onEditingComplete: onEditingComplete,
           autovalidateMode: autovalidateMode,
           inputFormatters: inputFormatters,
+          autofillHints: autofillHints,
           placeholder: hintText,
           padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
           prefix: prefixIcon != null

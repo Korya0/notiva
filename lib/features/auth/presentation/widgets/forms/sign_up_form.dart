@@ -43,31 +43,33 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthCubit, AuthState>(
-      builder: (c, s) => Form(
-        key: _fk,
-        child: Column(
-          children: [
-            NameField(controller: _nc)
-                .animate()
-                .fade(delay: 200.ms, duration: 400.ms)
-                .slideY(begin: 0.1, end: 0),
-            const SizedBox(height: 16),
-            EmailField(controller: _ec)
-                .animate()
-                .fade(delay: 300.ms, duration: 400.ms)
-                .slideY(begin: 0.1, end: 0),
-            const SizedBox(height: 16),
-            PasswordField(controller: _pc)
-                .animate()
-                .fade(delay: 400.ms, duration: 400.ms)
-                .slideY(begin: 0.1, end: 0),
-            const SizedBox(height: 32),
-            AppButton(
-              text: context.l10n.signup,
-              isLoading: s is AuthLoading,
-              onPressed: _onReg,
-            ).animate().fade(delay: 500.ms, duration: 400.ms).slideY(begin: 0.1, end: 0),
-          ],
+      builder: (c, s) => AutofillGroup(
+        child: Form(
+          key: _fk,
+          child: Column(
+            children: [
+              NameField(controller: _nc)
+                  .animate()
+                  .fade(delay: 200.ms, duration: 400.ms)
+                  .slideY(begin: 0.1, end: 0),
+              const SizedBox(height: 16),
+              EmailField(controller: _ec)
+                  .animate()
+                  .fade(delay: 300.ms, duration: 400.ms)
+                  .slideY(begin: 0.1, end: 0),
+              const SizedBox(height: 16),
+              PasswordField(controller: _pc)
+                  .animate()
+                  .fade(delay: 400.ms, duration: 400.ms)
+                  .slideY(begin: 0.1, end: 0),
+              const SizedBox(height: 32),
+              AppButton(
+                text: context.l10n.signup,
+                isLoading: s is AuthLoading,
+                onPressed: _onReg,
+              ).animate().fade(delay: 500.ms, duration: 400.ms).slideY(begin: 0.1, end: 0),
+            ],
+          ),
         ),
       ),
     );

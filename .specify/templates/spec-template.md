@@ -129,4 +129,6 @@
 
 - **Documentation**: All code MUST be documented. Naming should be self-documenting. Use `MISSION_EXPLANATION.md` for major tasks.
 - **Testing**: Unit tests are mandatory for Cubits, Use Cases, and Repositories.
-- **Architecture**: Strict layer boundaries must be respected.
+- [ ] Architecture: Strict layer boundaries must be respected.
+- [ ] Navigation: Reactive GoRouter logic integrated with BLoC streams.
+- [ ] Persistence: Atomic storage operations with serialized writes.

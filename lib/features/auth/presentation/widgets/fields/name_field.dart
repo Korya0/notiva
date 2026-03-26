@@ -17,6 +17,7 @@ class NameField extends StatelessWidget {
       controller: controller,
       hintText: context.l10n.fullName,
       prefixIcon: const Icon(Icons.person_outline),
+      autofillHints: const [AutofillHints.name],
       validator: (v) => AppValidators.name(context, v),
     );
   }

@@ -43,35 +43,37 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthCubit, AuthState>(
-      builder: (c, s) => Form(
-        key: _fk,
-        child: Column(
-          children: [
-            EmailField(controller: _ec)
-                .animate()
-                .fade(delay: 200.ms, duration: 400.ms)
-                .slideY(begin: 0.1, end: 0),
-            const SizedBox(height: 16),
-            PasswordField(controller: _pc)
-                .animate()
-                .fade(delay: 300.ms, duration: 400.ms)
-                .slideY(begin: 0.1, end: 0),
-            const SizedBox(height: 8),
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: AppTextButton(
-                text: context.l10n.forgotPassword,
-                textStyle: context.fonts.labelSmall,
-                onPressed: () => context.push(AppRoutes.forgotPassword),
-              ),
-            ).animate().fade(delay: 400.ms, duration: 400.ms),
-            const SizedBox(height: 32),
-            AppButton(
-              text: context.l10n.login,
-              isLoading: s is AuthLoading,
-              onPressed: _onLogin,
-            ).animate().fade(delay: 500.ms, duration: 400.ms).slideY(begin: 0.1, end: 0),
-          ],
+      builder: (c, s) => AutofillGroup(
+        child: Form(
+          key: _fk,
+          child: Column(
+            children: [
+              EmailField(controller: _ec)
+                  .animate()
+                  .fade(delay: 200.ms, duration: 400.ms)
+                  .slideY(begin: 0.1, end: 0),
+              const SizedBox(height: 16),
+              PasswordField(controller: _pc)
+                  .animate()
+                  .fade(delay: 300.ms, duration: 400.ms)
+                  .slideY(begin: 0.1, end: 0),
+              const SizedBox(height: 8),
+              Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: AppTextButton(
+                  text: context.l10n.forgotPassword,
+                  textStyle: context.fonts.labelSmall,
+                  onPressed: () => context.push(AppRoutes.forgotPassword),
+                ),
+              ).animate().fade(delay: 400.ms, duration: 400.ms),
+              const SizedBox(height: 32),
+              AppButton(
+                text: context.l10n.login,
+                isLoading: s is AuthLoading,
+                onPressed: _onLogin,
+              ).animate().fade(delay: 500.ms, duration: 400.ms).slideY(begin: 0.1, end: 0),
+            ],
+          ),
         ),
       ),
     );
