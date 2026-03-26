@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:notiva/core/di/service_locator.dart';
 import 'package:notiva/core/router/app_routes.dart';
 import 'package:notiva/core/router/app_transitions.dart';
+import 'package:notiva/core/router/auth_guard.dart';
+import 'package:notiva/core/router/utils/go_router_refresh_stream.dart';
 import 'package:notiva/features/auth/presentation/cubit/auth/auth_cubit.dart';
 import 'package:notiva/features/auth/presentation/views/forgot_password_view.dart';
 import 'package:notiva/features/auth/presentation/views/login_view.dart';
@@ -13,6 +14,8 @@ import 'package:notiva/features/splash/presentation/screens/splash_screen.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: AppRoutes.splash,
+  refreshListenable: GoRouterRefreshStream(locator<AuthCubit>().stream),
+  redirect: AppRouterConfig.redirectLogic,
   routes: [
     GoRoute(
       path: AppRoutes.splash,
@@ -35,10 +38,7 @@ final GoRouter appRouter = GoRouter(
       pageBuilder: (context, state) => AppTransitions.slideFromRight(
         context: context,
         state: state,
-        child: BlocProvider<AuthCubit>(
-          create: (_) => locator<AuthCubit>(),
-          child: const LoginView(),
-        ),
+        child: const LoginView(),
       ),
     ),
     GoRoute(
@@ -46,10 +46,7 @@ final GoRouter appRouter = GoRouter(
       pageBuilder: (context, state) => AppTransitions.slideFromRight(
         context: context,
         state: state,
-        child: BlocProvider<AuthCubit>(
-          create: (_) => locator<AuthCubit>(),
-          child: const SignUpView(),
-        ),
+        child: const SignUpView(),
       ),
     ),
     GoRoute(
@@ -57,10 +54,7 @@ final GoRouter appRouter = GoRouter(
       pageBuilder: (context, state) => AppTransitions.slideFromRight(
         context: context,
         state: state,
-        child: BlocProvider<AuthCubit>(
-          create: (_) => locator<AuthCubit>(),
-          child: const ForgotPasswordView(),
-        ),
+        child: const ForgotPasswordView(),
       ),
     ),
     GoRoute(

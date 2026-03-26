@@ -2,10 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:notiva/core/common/widgets/app_back_button.dart';
 import 'package:notiva/core/common/widgets/app_dialogs.dart';
-import 'package:notiva/core/router/app_routes.dart';
 import 'package:notiva/core/utils/extensions/app_localizations_extension.dart';
 import 'package:notiva/features/auth/presentation/cubit/auth/auth_cubit.dart';
 import 'package:notiva/features/auth/presentation/cubit/auth/auth_state.dart';
@@ -25,9 +23,6 @@ class SignUpView extends StatelessWidget {
       body: SafeArea(
         child: BlocListener<AuthCubit, AuthState>(
           listener: (c, s) {
-            if (s is AuthAuthenticated) {
-              return c.go(AppRoutes.home);
-            }
             if (s is AuthError) {
               unawaited(
                 AppDialogs.showErrorDialog(

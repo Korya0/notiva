@@ -40,7 +40,7 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
 
   @override
   Stream<AuthUser> get user =>
-      _firebaseAuth.authStateChanges().map(AuthMapper.toDomain);
+      _firebaseAuth.idTokenChanges().map(AuthMapper.toDomain);
 
   @override
   AuthUser get currentUser => AuthMapper.toDomain(_firebaseAuth.currentUser);

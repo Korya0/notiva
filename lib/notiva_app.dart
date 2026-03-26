@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notiva/core/common/widgets/app_dialogs.dart';
 import 'package:notiva/core/common/widgets/keyboard_dismisser.dart';
+import 'package:notiva/core/di/service_locator.dart';
 import 'package:notiva/core/global_state/locale/app_locale_cubit.dart';
 import 'package:notiva/core/global_state/locale/app_locale_state.dart';
 import 'package:notiva/core/global_state/theme/app_theme_cubit.dart';
@@ -8,6 +12,8 @@ import 'package:notiva/core/global_state/theme/app_theme_state.dart';
 import 'package:notiva/core/router/app_router.dart';
 import 'package:notiva/core/theme/app_theme.dart';
 import 'package:notiva/core/utils/extensions/app_localizations_extension.dart';
+import 'package:notiva/features/auth/presentation/cubit/auth/auth_cubit.dart';
+import 'package:notiva/features/auth/presentation/cubit/auth/auth_state.dart';
 import 'package:notiva/l10n/app_localizations.dart';
 
 class NotivaApp extends StatelessWidget {
@@ -24,16 +30,34 @@ class NotivaApp extends StatelessWidget {
                 : const Locale('en');
 
             return KeyboardDismisser(
-              child: MaterialApp.router(
-                onGenerateTitle: (context) => context.l10n.appTitle,
-                debugShowCheckedModeBanner: false,
-                routerConfig: appRouter,
-                theme: AppTheme.lightTheme(locale),
-                darkTheme: AppTheme.darkTheme(locale),
-                themeMode: ThemeMode.dark,
-                locale: locale,
-                localizationsDelegates: AppLocalizations.localizationsDelegates,
-                supportedLocales: AppLocalizations.supportedLocales,
+              child: BlocProvider<AuthCubit>(
+                create: (_) => locator<AuthCubit>(),
+                child: BlocListener<AuthCubit, AuthState>(
+                  listenWhen: (prev, curr) => curr is AuthSessionExpired,
+                  listener: (context, state) {
+                    if (state is AuthSessionExpired) {
+                      unawaited(
+                        AppDialogs.showErrorDialog(
+                          context: context,
+                          title: context.l10n.authErrorTitle,
+                          message: context.l10n.userDisabled,
+                        ),
+                      );
+                    }
+                  },
+                  child: MaterialApp.router(
+                    onGenerateTitle: (context) => context.l10n.appTitle,
+                    debugShowCheckedModeBanner: false,
+                    routerConfig: appRouter,
+                    theme: AppTheme.lightTheme(locale),
+                    darkTheme: AppTheme.darkTheme(locale),
+                    themeMode: ThemeMode.dark,
+                    locale: locale,
+                    localizationsDelegates:
+                        AppLocalizations.localizationsDelegates,
+                    supportedLocales: AppLocalizations.supportedLocales,
+                  ),
+                ),
               ),
             );
           },

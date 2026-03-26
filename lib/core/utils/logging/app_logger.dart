@@ -18,11 +18,6 @@ class AppLogger {
     _log('WARNING', message, error, stackTrace);
   }
 
-  // TODO(Future-Optimization): Enhance error tracking for enterprise scalability.
-  // 1. Use Crashlytics.instance.setUserIdentifier(userId) after successful login.
-  // 2. Implement Crashlytics.instance.setCustomKey('user_role', role) to segment errors.
-  // 3. Add 'connection_type' as a custom key to correlate crashes with network stability.
-  // 4. Link AppLogger.info breadcrumbs to Crashlytics using log() for precise reproduction steps.
   static void error(String message, [Object? error, StackTrace? stackTrace]) {
     _log('ERROR', message, error, stackTrace);
     if (!kDebugMode) {

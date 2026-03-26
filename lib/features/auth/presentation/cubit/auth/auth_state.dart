@@ -40,3 +40,7 @@ final class AuthPasswordResetSent extends AuthState {
 final class AuthUnauthenticated extends AuthState {
   const AuthUnauthenticated();
 }
+
+final class AuthSessionExpired extends AuthState {
+  const AuthSessionExpired();
+}

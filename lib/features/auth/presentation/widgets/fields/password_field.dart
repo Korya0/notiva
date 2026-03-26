@@ -25,6 +25,7 @@ class _PasswordFieldState extends State<PasswordField> {
       controller: widget.controller,
       hintText: context.l10n.password,
       obscureText: !_pv,
+      autofillHints: const [AutofillHints.password],
       prefixIcon: const Icon(Icons.lock_outline),
       inputFormatters: [
         FilteringTextInputFormatter.deny(RegExp(r'[\u0600-\u06FF]')),
